@@ -13,7 +13,12 @@ class PaintingsController < ApplicationController
   # GET /paintings/new
   def new
     @painting = Painting.new
+  #  @emojis = Emoji.all
   end
+  
+  # def new
+  #   @painting = Painting.new
+  # end
 
   # GET /paintings/1/edit
   def edit
@@ -67,4 +72,5 @@ class PaintingsController < ApplicationController
     def painting_params
       params.expect(painting: [ :name, :author, :image, :date, :rebus ])
     end
+
 end

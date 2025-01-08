@@ -1,2 +1,14 @@
 @import 'bootstrap/scss/bootstrap';
 @import 'bootstrap-icons/font/bootstrap-icons';
+
+.painting-image {
+    max-width: 150px;
+    max-height: 150px;
+    display: block;
+    margin: auto;
+  }
+  
+  .painting-card {
+    width: 180px;
+  }
+  

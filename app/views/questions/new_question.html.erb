@@ -1,0 +1,17 @@
+<h1>Choisissez la peinture qui correspond à cette combinaison d'émojis</h1>
+<div class="emoji-combination d-flex justify-content-center">
+  <%= image_tag @question.emoji1.image, class: 'emoji' %>
+  <%= image_tag @question.emoji2.image, class: 'emoji' %>
+  <%= image_tag @question.emoji3.image, class: 'emoji' %>
+</div>
+
+<div class="paintings d-flex flex-wrap justify-content-center mt-4">
+  <% @paintings.each do |painting| %>
+    <div class="painting-card text-center m-2">
+      <%= button_to submit_answer_questions_path(id: @question.id, painting_id: painting.id), 
+                    method: :post, class: 'btn btn-light border' do %>
+        <%= image_tag painting.image, class: 'painting-image' %>
+      <% end %>
+    </div>
+  <% end %>
+</div>

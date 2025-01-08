@@ -8,4 +8,29 @@
 
 <div>
   <%= link_to "Back to paintings", paintings_path %>
+</div> 
+
+<%
+=begin%>
+ <h1>Associez une combinaison d'émojis à la peinture suivante</h1>
+<div class="painting text-center mb-4">
+  <%= image_tag @painting.image, class: 'painting-image' %>
+  <p><strong><%= @painting.name %></strong></p>
 </div>
+
+<div class="emoji-grid d-flex flex-wrap">
+  <% @emojis.each do |emoji| %>
+    <div class="emoji m-2">
+      <%= image_tag emoji.image, class: 'emoji-select', data: { emoji_id: emoji.id } %>
+    </div>
+  <% end %>
+</div>
+
+<form action="<%= questions_path %>" method="post" class="mt-4">
+  <%= hidden_field_tag :emoji1_id, '', id: 'emoji1_id' %>
+  <%= hidden_field_tag :emoji2_id, '', id: 'emoji2_id' %>
+  <%= hidden_field_tag :emoji3_id, '', id: 'emoji3_id' %>
+  <button type="submit" class="btn btn-primary">Valider</button>
+</form> 
+<%
+=end%>

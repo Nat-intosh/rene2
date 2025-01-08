@@ -19,6 +19,18 @@ class QuestionsController < ApplicationController
   def edit
   end
 
+  def new_question
+      @question = Question.order('RANDOM()').first
+      # Ajoute la peinture de la question et 3 autres aléatoires
+      @paintings = Painting.where.not(id: @question.painting_id).order('RANDOM()').limit(3).to_a
+      @paintings << @question.painting
+      @paintings.shuffle! # Mélange les peintures pour que la bonne réponse ne soit pas toujours au même endroit
+  end
+  
+  def submit_answer
+    @question = Question.find(params[:id])
+    @result = @question.painting_id == params[:painting_id].to_i
+  end
   # POST /questions or /questions.json
   def create
     @question = Question.new(question_params)
@@ -67,4 +79,5 @@ class QuestionsController < ApplicationController
     def question_params
       params.expect(question: [ :painting_id, :emoji1_id, :emoji2_id, :emoji3_id ])
     end
+    
 end
