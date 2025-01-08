@@ -1,0 +1,11 @@
+<% content_for :title, "New emoji" %>
+
+<h1>New emoji</h1>
+
+<%= render "form", emoji: @emoji %>
+
+<br>
+
+<div>
+  <%= link_to "Back to emojis", emojis_path %>
+</div>

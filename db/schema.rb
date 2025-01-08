@@ -10,9 +10,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.0].define(version: 2025_01_08_133616) do
+ActiveRecord::Schema[8.0].define(version: 2025_01_08_135228) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "pg_catalog.plpgsql"
+
+  create_table "emojis", force: :cascade do |t|
+    t.string "name"
+    t.text "image"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "paintings", force: :cascade do |t|
     t.string "name"
@@ -23,4 +30,22 @@ ActiveRecord::Schema[8.0].define(version: 2025_01_08_133616) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
+
+  create_table "questions", force: :cascade do |t|
+    t.bigint "painting_id", null: false
+    t.bigint "emoji1_id", null: false
+    t.bigint "emoji2_id", null: false
+    t.bigint "emoji3_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["emoji1_id"], name: "index_questions_on_emoji1_id"
+    t.index ["emoji2_id"], name: "index_questions_on_emoji2_id"
+    t.index ["emoji3_id"], name: "index_questions_on_emoji3_id"
+    t.index ["painting_id"], name: "index_questions_on_painting_id"
+  end
+
+  add_foreign_key "questions", "emojis", column: "emoji1_id"
+  add_foreign_key "questions", "emojis", column: "emoji2_id"
+  add_foreign_key "questions", "emojis", column: "emoji3_id"
+  add_foreign_key "questions", "paintings"
 end

@@ -1,0 +1,37 @@
+<%= form_with(model: question) do |form| %>
+  <% if question.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(question.errors.count, "error") %> prohibited this question from being saved:</h2>
+
+      <ul>
+        <% question.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div>
+    <%= form.label :painting_id, style: "display: block" %>
+    <%= form.text_field :painting_id %>
+  </div>
+
+  <div>
+    <%= form.label :emoji1_id, style: "display: block" %>
+    <%= form.text_field :emoji1_id %>
+  </div>
+
+  <div>
+    <%= form.label :emoji2_id, style: "display: block" %>
+    <%= form.text_field :emoji2_id %>
+  </div>
+
+  <div>
+    <%= form.label :emoji3_id, style: "display: block" %>
+    <%= form.text_field :emoji3_id %>
+  </div>
+
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>
