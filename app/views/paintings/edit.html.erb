@@ -1,0 +1,12 @@
+<% content_for :title, "Editing painting" %>
+
+<h1>Editing painting</h1>
+
+<%= render "form", painting: @painting %>
+
+<br>
+
+<div>
+  <%= link_to "Show this painting", @painting %> |
+  <%= link_to "Back to paintings", paintings_path %>
+</div>
