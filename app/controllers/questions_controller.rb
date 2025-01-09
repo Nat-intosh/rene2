@@ -42,6 +42,28 @@ class QuestionsController < ApplicationController
     render :result
   end
 
+  def contribute
+    @painting = Painting.order('RANDOM()').first
+    @emojis = Emoji.all
+    @selected_emojis = []
+  end
+
+  def submit_contribution
+    painting = Painting.find(params[:painting_id])
+    emoji1 = Emoji.find(params[:emoji1_id])
+    emoji2 = Emoji.find(params[:emoji2_id])
+    emoji3 = Emoji.find(params[:emoji3_id])
+
+    Question.create(
+      painting: painting,
+      emoji1: emoji1,
+      emoji2: emoji2,
+      emoji3: emoji3
+    )
+
+    flash[:success] = "Merci pour votre contribution !"
+    redirect_to finish_path
+  end
   # POST /questions or /questions.json
   def create
     @question = Question.new(question_params)
