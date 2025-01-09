@@ -29,8 +29,16 @@ class QuestionsController < ApplicationController
   
   def submit_answer
     @question = Question.find(params[:id])
-    @result = @question.painting_id == params[:painting_id].to_i
+    @selected_painting = Painting.find(params[:painting_id])
+
+    if @selected_painting == @question.painting
+      flash[:success] = "Bravo ! Vous avez choisi la bonne peinture."
+    else
+      flash[:error] = "Dommage ! Ce n'est pas la bonne peinture."
+    end
+    redirect_to new_question_questions_path
   end
+  
   # POST /questions or /questions.json
   def create
     @question = Question.new(question_params)
