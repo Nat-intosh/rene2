@@ -8,10 +8,18 @@
 <div class="paintings d-flex flex-wrap justify-content-center mt-4">
   <% @paintings.each do |painting| %>
     <div class="painting-card text-center m-2">
-      <%= button_to submit_answer_questions_path(id: @question.id, painting_id: painting.id), 
-                    method: :post, class: 'btn btn-light border' do %>
-        <%= image_tag painting.image, class: 'painting-image' %>
+      <%= form_with url: submit_answer_questions_path, method: :post, local: true do |f| %>
+        <%= hidden_field_tag :id, @question.id %>
+        <%= hidden_field_tag :painting_id, painting.id %>
+        <%= image_tag painting.image, class: 'painting-image', onclick: "this.closest('form').submit()" %>
       <% end %>
     </div>
   <% end %>
 </div>
+<% if @selected_painting %>
+  <% if @selected_painting == @question.painting %>
+    <div class="alert alert-success mt-4">Bravo ! Vous avez choisi la bonne peinture.</div>
+  <% else %>
+    <div class="alert alert-danger mt-4">Dommage ! Ce n'est pas la bonne peinture.</div>
+  <% end %>
+<% end %>
