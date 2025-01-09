@@ -7,8 +7,51 @@
     display: block;
     margin: auto;
   }
-  
+
   .painting-card {
     width: 180px;
   }
-  
+
+
+  .emoji-question {
+    width: 50px;
+    height: 50px;
+  }
+
+  .emoji-question img{
+    aspect-ratio: 50/50;
+    object-fit: cover;
+    border: solid black 1px;
+  }
+
+
+.emoji-results {
+  width: 50px;
+  height: 50px;
+}
+
+.emoji-results img{
+  aspect-ratio: 50/50;
+  object-fit: cover;
+  border: solid black 1px;
+}
+
+.emoji-combination {
+  display: flex;
+  gap: 16px;
+  margin-top: 32px;
+  margin-bottom: 32px;
+}
+
+.button-continue {
+  display: flex;
+  width: fit-content;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.paintings-grids {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+}

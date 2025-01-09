@@ -1,11 +1,13 @@
-<h1>Choisissez la peinture qui correspond à cette combinaison d'émojis</h1>
+<section class=container>
+<h1>Devine le tableau</h1>
+<p>Voici une liste des emojis, devine quel tableau est décrit :</p>
 <div class="emoji-combination d-flex justify-content-center">
-  <%= image_tag @question.emoji1.image, class: 'emoji' %>
-  <%= image_tag @question.emoji2.image, class: 'emoji' %>
-  <%= image_tag @question.emoji3.image, class: 'emoji' %>
+  <%= image_tag @question.emoji1.image, class: 'emoji emoji-results' %>
+  <%= image_tag @question.emoji2.image, class: 'emoji emoji-results' %>
+  <%= image_tag @question.emoji3.image, class: 'emoji emoji-results' %>
 </div>
 
-<div class="paintings d-flex flex-wrap justify-content-center mt-4">
+<div class="paintings-grids mt-4">
   <% @paintings.each do |painting| %>
     <div class="painting-card text-center m-2">
       <%= form_with url: submit_answer_questions_path, method: :post, local: true do |f| %>
@@ -16,10 +18,4 @@
     </div>
   <% end %>
 </div>
-<% if @selected_painting %>
-  <% if @selected_painting == @question.painting %>
-    <div class="alert alert-success mt-4">Bravo ! Vous avez choisi la bonne peinture.</div>
-  <% else %>
-    <div class="alert alert-danger mt-4">Dommage ! Ce n'est pas la bonne peinture.</div>
-  <% end %>
-<% end %>
+</section>

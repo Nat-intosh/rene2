@@ -1,0 +1,22 @@
+
+  <body>
+    <div class="container mt-5">
+      <% if @success %>
+        <h1>Devine le tableau</h1>
+        <p><%= @result_message %></p>
+      <% else %>
+        <h1>Devine le tableau</h1>
+        <p><%= @result_message %></p>
+        <div class="mt-3">
+          <%= image_tag @question.painting.image, class: 'img-fluid' %>
+          <div class="emoji-combination d-flex justify-content-center">
+            <%= image_tag @question.emoji1.image, class: 'emoji emoji-results' %>
+            <%= image_tag @question.emoji2.image, class: 'emoji emoji-results' %>
+            <%= image_tag @question.emoji3.image, class: 'emoji emoji-results' %>
+          </div>
+          <p>Il s'agissait de : <%= @question.painting.name %> par <%= @question.painting.author %> en <%= @question.painting.date %>.</p>
+        </div>
+      <% end %>
+      <%= link_to "Continuer", new_question_questions_path, class: "btn btn-primary mt-4 button-continue" %>
+    </div>
+  </body>

@@ -26,19 +26,22 @@ class QuestionsController < ApplicationController
       @paintings << @question.painting
       @paintings.shuffle! # Mélange les peintures pour que la bonne réponse ne soit pas toujours au même endroit
   end
-  
+
   def submit_answer
     @question = Question.find(params[:id])
     @selected_painting = Painting.find(params[:painting_id])
 
     if @selected_painting == @question.painting
-      flash[:success] = "Bravo ! Vous avez choisi la bonne peinture."
+      @result_message = "Bravo ! Malinx, le lynx. On continue ?"
+      @success = true
     else
-      flash[:error] = "Dommage ! Ce n'est pas la bonne peinture."
+      @result_message = "Ah, mince... Mauvaise réponse..."
+      @success = false
     end
-    redirect_to new_question_questions_path
+
+    render :result
   end
-  
+
   # POST /questions or /questions.json
   def create
     @question = Question.new(question_params)
@@ -87,5 +90,5 @@ class QuestionsController < ApplicationController
     def question_params
       params.expect(question: [ :painting_id, :emoji1_id, :emoji2_id, :emoji3_id ])
     end
-    
+
 end
