@@ -1,21 +1,25 @@
-<section class=container>
-<h1>Devine le tableau</h1>
-<p>Voici une liste des emojis, devine quel tableau est décrit :</p>
-<div class="emoji-combination d-flex justify-content-center">
-  <%= image_tag @question.emoji1.image, class: 'emoji emoji-results' %>
-  <%= image_tag @question.emoji2.image, class: 'emoji emoji-results' %>
-  <%= image_tag @question.emoji3.image, class: 'emoji emoji-results' %>
-</div>
+<section class="container">
+  <h1>Devine le tableau</h1>
+  <p>Voici une liste des emojis, devine quel tableau est décrit :</p>
+  <div class="emoji-combination d-flex justify-content-center">
+    <%= image_tag @question.emoji1.image, class: 'emoji emoji-results' %>
+    <%= image_tag @question.emoji2.image, class: 'emoji emoji-results' %>
+    <%= image_tag @question.emoji3.image, class: 'emoji emoji-results' %>
+  </div>
 
-<div class="paintings-grids mt-4">
-  <% @paintings.each do |painting| %>
-    <div class="painting-card text-center m-2">
-      <%= form_with url: submit_answer_questions_path, method: :post, local: true do |f| %>
-        <%= hidden_field_tag :id, @question.id %>
-        <%= hidden_field_tag :painting_id, painting.id %>
-        <%= image_tag painting.image, class: 'painting-image', onclick: "this.closest('form').submit()" %>
+  <div data-controller="questions">
+    <div class="paintings-grids mt-4">
+      <% @paintings.each do |painting| %>
+        <div class="painting-card text-center m-2">
+          <%= form_with url: submit_answer_questions_path, method: :post, local: true, 
+                        data: { question_form_target: "questionForm" } do |f| %>
+            <%= hidden_field_tag :id, @question.id %>
+            <%= hidden_field_tag :painting_id, painting.id %>
+            <%= image_tag painting.image, class: 'painting-image', 
+                          data: { action: "click->questions#submitQuestion" } %>
+          <% end %>
+        </div>
       <% end %>
     </div>
-  <% end %>
-</div>
+  </div>
 </section>
