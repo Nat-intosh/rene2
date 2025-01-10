@@ -7,3 +7,17 @@
 #   ["Action", "Comedy", "Drama", "Horror"].each do |genre_name|
 #     MovieGenre.find_or_create_by!(name: genre_name)
 #   end
+require 'json'
+
+file_path = Rails.root.join('db', 'paintings.json')
+paintings = JSON.parse(File.read(file_path))
+
+paintings.each do |painting|
+  Painting.create!(
+    name: painting["name"],
+    author: painting["author"],
+    image: painting["image"],
+    date: painting["date"],
+    rebus: painting["rebus"]
+  )
+end
