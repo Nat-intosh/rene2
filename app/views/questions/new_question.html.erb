@@ -2,7 +2,7 @@
   <div class="new-questions-text-section">
     <h1>Devine le tableau</h1>
     <p>Voici une liste d'emojis, devine quel tableau est décrit :</p>
-  <div>
+  </div>
   <div class="emoji-combination d-flex justify-content-center">
     <%= image_tag @question.emoji1.image, class: 'emoji emoji-results' %>
     <%= image_tag @question.emoji2.image, class: 'emoji emoji-results' %>
@@ -10,18 +10,25 @@
   </div>
 
   <div data-controller="questions">
+    <%= form_with url: submit_answer_questions_path, method: :post, local: true,
+                  data: { question_form_target: "questionForm" } do |f| %>
+      <%= hidden_field_tag :id, @question.id %>
+
     <div class="paintings-grids mt-4">
       <% @paintings.each do |painting| %>
         <div class="painting-card text-center m-2">
-          <%= form_with url: submit_answer_questions_path, method: :post, local: true,
-                        data: { question_form_target: "questionForm" } do |f| %>
-            <%= hidden_field_tag :id, @question.id %>
-            <%= hidden_field_tag :painting_id, painting.id %>
-            <%= image_tag painting.image, class: 'painting-image',
-                          data: { action: "click->questions#submitQuestion" } %>
+          <%= label_tag "painting_#{painting.id}", class: "painting-label" do %>
+            <%= f.radio_button :selected_painting, painting.id, id: "painting_#{painting.id}", class: 'painting-radio' %>
+            <%= image_tag painting.image, class: 'painting-image' %>
           <% end %>
         </div>
       <% end %>
     </div>
+
+
+      <div class="submit-button-container mt-3">
+        <%= f.submit 'Valider', class: 'btn btn-primary', data: { action: "click->questions#submitQuestion" } %>
+      </div>
+    <% end %>
   </div>
 </section>

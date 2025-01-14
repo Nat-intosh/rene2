@@ -29,17 +29,20 @@ class QuestionsController < ApplicationController
 
   def submit_answer
     @question = Question.find(params[:id])
-    @selected_painting = Painting.find(params[:painting_id])
+    @selected_painting = Painting.find(params[:selected_painting])
 
     if @selected_painting == @question.painting
+      session[:correct_answers] = session[:correct_answers].to_i + 1
       @result_message = "Bravo ! Malinx, le lynx. On continue ?"
       @success = true
     else
+      session[:correct_answers] = 0
       @result_message = "Ah, mince... Mauvaise réponse..."
       @success = false
     end
 
     render :result
+
   end
 
   def contribute
