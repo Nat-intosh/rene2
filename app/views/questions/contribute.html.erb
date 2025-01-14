@@ -31,7 +31,7 @@
 <%
 =end%>
 
-<section class="container">
+<section class="container" data-controller="emoji">
   <h1>Décris le tableau</h1>
   <p>Veuillez vous diriger vers la peinture : <strong><%= @painting.name %></strong></p>
   <div class="painting text-center">
@@ -40,18 +40,17 @@
 
   <p>Choisis 3 emojis pour décrire ce tableau.</p>
   <div id="emoji-selection" class="emoji-grid">
-  <% @emojis.each do |emoji| %>
-    <div class="emoji-card text-center m-2" style="border: solid 1px red;">
-      <%= image_tag emoji.image, class: 'emoji', data: { emoji_id: emoji.id, action: 'click->emoji#addEmoji' } %>
-    </div>
-  <% end %>
-</div>
+    <% @emojis.each do |emoji| %>
+      <div class="emoji-card text-center m-2" style="border: solid 1px red;">
+        <%= image_tag emoji.image, class: 'emoji', data: { emoji_id: emoji.id, action: 'click->emoji#addEmoji' } %>
+      </div>
+    <% end %>
+  </div>
 
-<h3>Votre sélection :</h3>
-<div id="selected-emojis" class="d-flex justify-content-center mb-4" data-emoji-target="selectedEmojis">
-</div>
+  <h3>Votre sélection :</h3>
+  <div id="selected-emojis" class="d-flex justify-content-center mb-4" data-emoji-target="selectedEmojis">
+  </div>
 
-<div data-controller="emoji">
   <%= form_with url: submit_contribution_questions_path, method: :post, local: true do |f| %>
     <%= hidden_field_tag :painting_id, @painting.id %>
     <%= hidden_field_tag :emoji1_id, nil, id: 'emoji1_id', data: { emoji_target: 'emoji1Id' } %>
@@ -59,6 +58,4 @@
     <%= hidden_field_tag :emoji3_id, nil, id: 'emoji3_id', data: { emoji_target: 'emoji3Id' } %>
     <%= f.submit 'Valider ma contribution', class: 'btn btn-success', disabled: true, id: 'submit-button', data: { emoji_target: 'submitButton' } %>
   <% end %>
-</div>
-
 </section>
