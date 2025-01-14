@@ -1,7 +1,8 @@
 Rails.application.routes.draw do
+  get "home/index"
   resources :emojis
   resources :paintings
-  resources :questions do 
+  resources :questions do
     collection do
       get 'new_question'
       post 'submit_answer'
@@ -21,6 +22,9 @@ Rails.application.routes.draw do
 
   # Defines the root path route ("/")
   # root "posts#index"
-  root 'questions#new_question'
+  root "home#index"
+
+  get 'home/intro', to: 'home#intro', as: 'home_intro'
+    get 'home/credits', to: 'home#credits', as: 'home_credits'
 
 end

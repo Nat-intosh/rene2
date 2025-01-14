@@ -1,0 +1,29 @@
+.home-buttons-section {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  background-color: white;
+  padding-bottom: 24px;
+  padding-top: 12px;
+}
+
+.home-background {
+  display: flex;
+  flex-direction: column;
+  background-color: $rose;
+  height: 100vh;
+  width: 100%;
+  justify-content: space-between;
+}
+
+.home-bottom-section {
+  display: flex;
+  flex-direction: column;
+}
+
+.home-top-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 24px;
+}

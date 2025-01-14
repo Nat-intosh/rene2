@@ -27,36 +27,38 @@
     <%= hidden_field_tag :emoji3_id, nil, id: 'emoji3_id' %>
     <%= f.submit 'Valider ma contribution', class: 'btn btn-success', disabled: true, id: 'submit-button' %>
     <% end %>
-</div> 
+</div>
 <%
 =end%>
 
-<h1>Contribuer</h1>
-<p>Veuillez vous diriger vers la peinture : <strong><%= @painting.name %></strong></p>
-<div class="painting text-center">
-  <%= image_tag @painting.image, class: 'painting-image mb-4' %>
-</div>
+<section class="container">
+  <h1>Décris le tableau</h1>
+  <p>Veuillez vous diriger vers la peinture : <strong><%= @painting.name %></strong></p>
+  <div class="painting text-center">
+    <%= image_tag @painting.image, class: 'painting-image mb-4' %>
+  </div>
 
-<h2>Sélectionnez une combinaison de 3 émojis</h2>
-<div id="emoji-selection" class="d-flex flex-wrap justify-content-center">
+  <p>Choisis 3 emojis pour décrire ce tableau.</p>
+  <div id="emoji-selection" class="emoji-grid">
   <% @emojis.each do |emoji| %>
-    <div class="emoji-card text-center m-2">
+    <div class="emoji-card text-center m-2" style="border: solid 1px red;">
       <%= image_tag emoji.image, class: 'emoji', data: { emoji_id: emoji.id, action: 'click->emoji#addEmoji' } %>
     </div>
   <% end %>
 </div>
 
 <h3>Votre sélection :</h3>
-<div id="selected-emojis" class="d-flex justify-content-center mb-4">
-  <!-- Les émojis sélectionnés seront affichés ici -->
+<div id="selected-emojis" class="d-flex justify-content-center mb-4" data-emoji-target="selectedEmojis">
 </div>
 
 <div data-controller="emoji">
   <%= form_with url: submit_contribution_questions_path, method: :post, local: true do |f| %>
     <%= hidden_field_tag :painting_id, @painting.id %>
-    <%= hidden_field_tag :emoji1_id, nil, id: 'emoji1_id' %>
-    <%= hidden_field_tag :emoji2_id, nil, id: 'emoji2_id' %>
-    <%= hidden_field_tag :emoji3_id, nil, id: 'emoji3_id' %>
-    <%= f.submit 'Valider ma contribution', class: 'btn btn-success', disabled: true, id: 'submit-button' %>
+    <%= hidden_field_tag :emoji1_id, nil, id: 'emoji1_id', data: { emoji_target: 'emoji1Id' } %>
+    <%= hidden_field_tag :emoji2_id, nil, id: 'emoji2_id', data: { emoji_target: 'emoji2Id' } %>
+    <%= hidden_field_tag :emoji3_id, nil, id: 'emoji3_id', data: { emoji_target: 'emoji3Id' } %>
+    <%= f.submit 'Valider ma contribution', class: 'btn btn-success', disabled: true, id: 'submit-button', data: { emoji_target: 'submitButton' } %>
   <% end %>
 </div>
+
+</section>

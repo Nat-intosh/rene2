@@ -1,44 +1,72 @@
-import { Controller } from "@hotwired/stimulus";
+import { Controller } from "stimulus";
 
 export default class extends Controller {
-  static targets = ["emoji1", "emoji2", "emoji3", "submitButton"];
+  static targets = ["selectedEmojis", "emoji1Id", "emoji2Id", "emoji3Id", "submitButton"];
 
   connect() {
-    this.selectedEmojis = [];
-    this.updateUI();
-    console.log("Emoji controller connected zizi");
+    this.selected = [];  // Initialise une liste vide pour stocker les IDs sélectionnés
+    console.log("Contrôleur connecté, liste initiale des émojis sélectionnés :", this.selected);
   }
 
   addEmoji(event) {
-    const emojiId = event.currentTarget.dataset.emojiId;
+    // Étape 1 : Récupérer l'ID de l'émoji cliqué
+    const emojiId = event.currentTarget.dataset.emoji_id;
+    console.log("Émoji cliqué, ID récupéré :", emojiId);
 
-    // Add emoji to selected emojis if not already selected
-    if (this.selectedEmojis.length < 3 && !this.selectedEmojis.includes(emojiId)) {
-      this.selectedEmojis.push(emojiId);
-      this.updateUI();
+    // Étape 2 : Cloner l'image de l'émoji cliqué
+    const emojiImage = event.currentTarget.querySelector("img").cloneNode(true);
+    console.log("Image de l'émoji clonée :", emojiImage);
+
+    // Étape 3 : Vérifier si l'émoji a déjà été sélectionné
+    if (this.selected.includes(emojiId)) {
+      console.log("Cet émoji est déjà sélectionné.");
+      alert("Cet émoji est déjà sélectionné !");
+      return;  // Arrêter l'exécution si l'émoji est déjà dans la sélection
     }
+
+    // Étape 4 : Vérifier si le nombre d'émojis sélectionnés atteint 3
+    if (this.selected.length >= 3) {
+      console.log("Nombre d'émojis sélectionnés dépasse 3.");
+      alert("Vous ne pouvez sélectionner que 3 émojis.");
+      return;  // Arrêter l'exécution si 3 émojis ont déjà été sélectionnés
+    }
+
+    // Étape 5 : Ajouter l'ID de l'émoji à la liste des sélectionnés
+    this.selected.push(emojiId);
+    console.log("Nouvelle liste des émojis sélectionnés :", this.selected);
+
+    // Étape 6 : Mettre à jour l'affichage des émojis sélectionnés
+    this.displaySelectedEmoji(emojiImage);
+
+    // Étape 7 : Mettre à jour les champs cachés du formulaire avec les IDs des émojis sélectionnés
+    this.updateHiddenFields();
+
+    // Étape 8 : Activer ou désactiver le bouton de soumission selon le nombre d'émojis sélectionnés
+    this.updateSubmitButtonState();
   }
 
-  updateUI() {
-    const selectedEmojisContainer = document.getElementById("selected-emojis");
-    selectedEmojisContainer.innerHTML = "";  // Clear selected emojis display
+  // Affiche l'image de l'émoji sélectionné dans la section "Votre sélection"
+  displaySelectedEmoji(emojiImage) {
+    const container = document.createElement("div");
+    container.classList.add("selected-emoji");
 
-    // Render the selected emojis in the UI
-    this.selectedEmojis.forEach((emojiId, index) => {
-      const emojiElement = document.querySelector(`[data-emoji-id="${emojiId}"] img`);
-      
-      if (emojiElement) {
-        const emojiImage = emojiElement.cloneNode(true);
-        selectedEmojisContainer.appendChild(emojiImage);
+    container.appendChild(emojiImage);
+    this.selectedEmojisTarget.appendChild(container);
+    console.log("Émoji ajouté à l'affichage :", emojiImage);
+  }
 
-        // Set the hidden field values for each selected emoji
-        document.getElementById(`emoji${index + 1}_id`).value = emojiId;
-      } else {
-        console.warn(`Emoji with ID ${emojiId} not found in the DOM`);
-      }
+  // Met à jour les champs cachés avec les IDs des émojis sélectionnés
+  updateHiddenFields() {
+    const hiddenFields = [this.emoji1IdTarget, this.emoji2IdTarget, this.emoji3IdTarget];
+    hiddenFields.forEach((field, index) => {
+      field.value = this.selected[index] || null;  // Si la sélection est vide, met à null
+      console.log(`Champ caché ${index + 1} mis à jour avec l'ID :`, field.value);
     });
+  }
 
-    // Enable/disable the submit button based on the number of selected emojis
-    document.getElementById("submit-button").disabled = this.selectedEmojis.length !== 3;
+  // Active ou désactive le bouton de soumission en fonction du nombre d'émojis sélectionnés
+  updateSubmitButtonState() {
+    this.submitButtonTarget.disabled = this.selected.length !== 3;  // Désactive si moins de 3 émojis
+    console.log("Bouton de soumission", this.submitButtonTarget.disabled ? "désactivé" : "activé");
   }
 }

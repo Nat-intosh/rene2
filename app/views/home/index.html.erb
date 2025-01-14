@@ -1,0 +1,36 @@
+<section class="home-background">
+
+  <div class="home-top-section">
+    <%= image_tag "portrait.svg" %>
+    <%= image_tag "interogation.svg" %>
+  </div>
+
+
+  <div class="home-bottom-section">
+
+    <%= image_tag "wave.svg" %>
+
+    <div class="home-buttons-section container">
+      <%= link_to home_intro_path do %>
+      <div class="bouton-container">
+        <div class="bouton-container-top">
+          Jouer
+        </div>
+        <div class="bouton-container-bottom">
+        </div>
+      </div>
+      <% end %>
+      <%= link_to home_credits_path do %>
+      <div class="bouton-container">
+        <div class="bouton-container-top">
+          Crédits
+        </div>
+        <div class="bouton-container-bottom">
+        </div>
+      </div>
+      <% end %>
+    </div>
+
+  </div>
+
+</section>

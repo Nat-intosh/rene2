@@ -1,28 +1,82 @@
 @import 'bootstrap/scss/bootstrap';
 @import 'bootstrap-icons/font/bootstrap-icons';
 
+@import url('https://fonts.googleapis.com/css2?family=Jersey+10&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+$bleu : #0D398F;
+$rose : #E952B3;
+
+//---------------------main----------------------------------
+
+p {
+  color: $bleu;
+  font-family: "Kanit";
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  margin: unset !important;
+}
+
+h1 {
+  color: $bleu !important;
+  font-family: "Jersey 10";
+  font-size: 35px !important;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  margin: unset !important;
+}
+
+//---------------------buttons----------------------------------
+
+
+
+//---------------------home----------------------------------
+
+
+
+//---------------------intro----------------------------------
+
+
+
+//-----------------new-questions-----------------------------
+
+.new-questions-text-section {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
 .painting-image {
-    max-width: 150px;
-    max-height: 150px;
-    display: block;
-    margin: auto;
-  }
+  max-width: 150px;
+  max-height: 150px;
+  display: block;
+  margin: auto;
+}
 
-  .painting-card {
-    width: 180px;
-  }
+.painting-card {
+  width: 145px;
+  height: 135px;
+}
+
+.painting-card img{
+  aspect-ratio: 145/135;
+  object-fit: cover;
+}
 
 
-  .emoji-question {
-    width: 50px;
-    height: 50px;
-  }
+.emoji-question {
+  width: 50px;
+  height: 50px;
+}
 
-  .emoji-question img{
-    aspect-ratio: 50/50;
-    object-fit: cover;
-    border: solid black 1px;
-  }
+.emoji-question img{
+  aspect-ratio: 50/50;
+  object-fit: cover;
+  border: solid black 1px;
+}
 
 
 .emoji-results {
@@ -55,3 +109,61 @@
   grid-template-columns: 1fr 1fr;
   grid-template-rows: 1fr 1fr;
 }
+
+.emoji-grid {
+  display: flex;
+  flex-wrap: wrap;
+  overflow: scroll;
+  width: 100%;
+  height: 300px;
+}
+
+.emoji {
+  width: 48px;
+  height: 48px;
+}
+
+
+
+.bouton-container {
+  display: flex;
+  position: relative;
+  width: 100%;
+  height: 64px;
+  color: white;
+  font-family: "Jersey 10";
+}
+
+.bouton-container-top {
+  width: 98%;
+  height: 90%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: $bleu;
+  z-index: 2;
+  border-radius: 3px;
+  color: white !important;
+  text-decoration: none;
+  font-size: 35px;
+  justify-content: center;
+  display: flex;
+}
+
+.bouton-container-bottom {
+  width: 98%;
+  height: 90%;
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  background-color: $rose;
+  border-radius: 3px;
+}
+
+
+@import 'components/home';
+@import 'components/intro';
+@import 'components/questions';
+@import 'components/responses';
+@import 'components/buttons';
+@import 'components/variables';

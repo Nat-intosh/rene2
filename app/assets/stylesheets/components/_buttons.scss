@@ -1,0 +1,34 @@
+.bouton-container {
+  display: flex;
+  position: relative;
+  width: 100%;
+  height: 64px;
+  color: white;
+  font-family: "Jersey 10";
+}
+
+.bouton-container-top {
+  width: 98%;
+  height: 90%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: $bleu;
+  z-index: 2;
+  border-radius: 3px;
+  color: white !important;
+  text-decoration: none;
+  font-size: 35px;
+  justify-content: center;
+  display: flex;
+}
+
+.bouton-container-bottom {
+  width: 98%;
+  height: 90%;
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  background-color: $rose;
+  border-radius: 3px;
+}
