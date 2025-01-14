@@ -1,9 +1,8 @@
-<body>
-  <div class="container mt-5">
-    <% if @success %>
+<div class="container mt-5 result-page" data-controller="questions">
+  <% if @success %>
     <h1>Devine le tableau</h1>
     <p><%= @result_message %></p>
-    <% else %>
+  <% else %>
     <h1>Devine le tableau</h1>
     <p><%= @result_message %></p>
     <div class="mt-3">
@@ -15,15 +14,6 @@
       </div>
       <p>Il s'agissait de : <%= @question.painting.name %> par <%= @question.painting.author %> en <%= @question.painting.date %>.</p>
     </div>
-    <% end %>
-    <%= link_to new_question_questions_path do %>
-    <div class="bouton-container">
-      <div class="bouton-container-top">
-        Continuer
-      </div>
-      <div class="bouton-container-bottom">
-      </div>
-    </div>
-    <% end %>
-  </div>
-</body>
+  <% end %>
+  <%= link_to "Continuer", new_question_questions_path, class: "btn btn-primary mt-4 button-continue" %>
+</div>
