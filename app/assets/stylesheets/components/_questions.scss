@@ -1,0 +1,58 @@
+.new-questions-text-section {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.painting-image {
+  max-width: 150px;
+  max-height: 150px;
+  display: block;
+  margin: auto;
+}
+
+.painting-card {
+  width: 145px;
+  height: 135px;
+}
+
+.painting-card img{
+  aspect-ratio: 145/135;
+  object-fit: cover;
+}
+
+
+.emoji-question {
+  width: 50px;
+  height: 50px;
+}
+
+.emoji-question img{
+  aspect-ratio: 50/50;
+  object-fit: cover;
+  border: solid black 1px;
+}
+
+.paintings-grids {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  gap: 78px 0px;
+}
+
+.painting-description {
+  font-size: 8px;
+  text-align: left;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+.painting-radio {
+  width: 32px;
+  height: 32px;
+  margin-top: 10px;
+}
+
+.modal-header {
+  border: none !important;
+}

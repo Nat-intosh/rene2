@@ -32,3 +32,16 @@
   background-color: $rose;
   border-radius: 3px;
 }
+
+.bouton-indice {
+  background-color: $rose;
+  font-family: "Jersey 10";
+  font-size: 16px;
+  border: none;
+  color: white;
+  border-radius: 4px;
+  padding: 6px 12px;
+  display: flex;
+  margin-left: auto;
+  margin-right: auto;
+}

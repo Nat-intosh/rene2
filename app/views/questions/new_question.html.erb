@@ -9,26 +9,47 @@
     <%= image_tag @question.emoji3.image, class: 'emoji emoji-results' %>
   </div>
 
+  <button type="button" class="bouton-indice" data-bs-toggle="modal" data-bs-target="#exampleModal">
+    Aidez-moi
+  </button>
+
+  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <p class="modal-title fs-5" id="exampleModalLabel">Voici un indice pour t’aider !</p>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+
+
+        </div>
+      </div>
+    </div>
+  </div>
+
   <div data-controller="questions">
     <%= form_with url: submit_answer_questions_path, method: :post, local: true,
                   data: { question_form_target: "questionForm" } do |f| %>
-      <%= hidden_field_tag :id, @question.id %>
+    <%= hidden_field_tag :id, @question.id %>
 
-    <div class="paintings-grids mt-4">
-      <% @paintings.each do |painting| %>
-        <div class="painting-card text-center m-2">
-          <%= label_tag "painting_#{painting.id}", class: "painting-label" do %>
-            <%= f.radio_button :selected_painting, painting.id, id: "painting_#{painting.id}", class: 'painting-radio' %>
-            <%= image_tag painting.image, class: 'painting-image' %>
-          <% end %>
-        </div>
+  <div class="paintings-grids mt-4" id="gallery">
+    <% @paintings.each do |painting| %>
+    <div class="painting-card text-center m-2">
+      <%= label_tag "painting_#{painting.id}", class: "painting-label" do %>
+      <a href="<%= painting.image %>" data-fancybox="gallery" data-caption="<%= painting.name %> - <%= painting.author %>">
+        <%= image_tag painting.image, class: 'painting-image' %>
+      </a>
+      <%= f.radio_button :selected_painting, painting.id, id: "painting_#{painting.id}", class: 'painting-radio' %>
       <% end %>
     </div>
+    <% end %>
+  </div>
 
 
-      <div class="submit-button-container mt-3">
-        <%= f.submit 'Valider', class: 'btn btn-primary', data: { action: "click->questions#submitQuestion" } %>
-      </div>
+    <div class="submit-button-container mt-3">
+      <%= f.submit 'Valider', class: 'btn btn-primary', data: { action: "click->questions#submitQuestion" } %>
+    </div>
     <% end %>
   </div>
 </section>

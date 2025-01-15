@@ -43,42 +43,6 @@ h1 {
 
 //-----------------new-questions-----------------------------
 
-.new-questions-text-section {
-  display: flex;
-  flex-direction: column;
-  gap: 24px;
-}
-
-.painting-image {
-  max-width: 150px;
-  max-height: 150px;
-  display: block;
-  margin: auto;
-}
-
-.painting-card {
-  width: 145px;
-  height: 135px;
-}
-
-.painting-card img{
-  aspect-ratio: 145/135;
-  object-fit: cover;
-}
-
-
-.emoji-question {
-  width: 50px;
-  height: 50px;
-}
-
-.emoji-question img{
-  aspect-ratio: 50/50;
-  object-fit: cover;
-  border: solid black 1px;
-}
-
-
 .emoji-results {
   width: 50px;
   height: 50px;
@@ -104,26 +68,12 @@ h1 {
   margin-right: auto;
 }
 
-.paintings-grids {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-template-rows: 1fr 1fr;
-}
 
-.emoji-grid {
-  display: flex;
-  flex-wrap: wrap;
-  overflow: scroll;
-  width: 100%;
-  height: 300px;
-}
 
 .emoji {
   width: 48px;
   height: 48px;
 }
-
-
 
 .bouton-container {
   display: flex;
@@ -167,3 +117,4 @@ h1 {
 @import 'components/responses';
 @import 'components/buttons';
 @import 'components/variables';
+@import 'components/contribute';
