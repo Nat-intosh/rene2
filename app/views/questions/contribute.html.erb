@@ -1,49 +1,47 @@
 <%
 =begin%>
-
-<section>
-  <section id="welcome" class="container" data-controller="step" data-action="step#changeStep>
-  <h1> Déplace toi</h1>
-  <p>Veuillez vous diriger vers la peinture : <strong><%= @painting.name %></strong></p>
-  <div class="painting text-center">
-    <%= image_tag @painting.image, class: 'painting-image mb-4' %>
-  </div>
+ <div data-controller="step">
+  <section id="welcome" class="container" data-step="0" data-target="step.section">
+    <h1>Déplace toi</h1>
+    <p>Veuillez vous diriger vers la peinture : <strong><%= @painting.name %></strong></p>
+    <div class="painting text-center">
+      <%= image_tag @painting.image, class: 'painting-image mb-4' %>
+    </div>
+    <button data-action="click->step#next">Suivant</button>
   </section>
 
-  <section id="contribution" class="container" data-controller="emoji">
+  <section id="contribution" class="container" data-controller="emoji" data-step="1" data-target="step.section" hidden>
     <h1>Décris le tableau</h1>
-
     <p>Choisis 3 emojis pour décrire ce tableau.</p>
-
     <div id="selected-emojis" class="emoji-selection-interface" data-emoji-target="selectedEmojis">
     </div>
-
     <div id="emoji-selection" class="emoji-grid">
       <% @emojis.each do |emoji| %>
-        <div class="emoji-card text-center m-2">
-          <%= image_tag emoji.image, class: 'emoji', data: { emoji_id: emoji.id, action: 'click->emoji#addEmoji' } %>
+        <div class="emoji-card text-center m-2" data-emoji-id="<%= emoji.id %>" data-action="click->emoji#addEmoji">
+          <%= emoji.image %>
         </div>
       <% end %>
     </div>
 
-  <%= form_with url: submit_contribution_questions_path, method: :post, local: true do |f| %>
-    <%= hidden_field_tag :painting_id, @painting.id %>
-    <%= hidden_field_tag :emoji1_id, nil, id: 'emoji1_id', data: { emoji_target: 'emoji1Id' } %>
-    <%= hidden_field_tag :emoji2_id, nil, id: 'emoji2_id', data: { emoji_target: 'emoji2Id' } %>
-    <%= hidden_field_tag :emoji3_id, nil, id: 'emoji3_id', data: { emoji_target: 'emoji3Id' } %>
+    <%= form_with url: submit_contribution_questions_path, method: :post, local: true, data: { action: "submit->step#submitForm" } do |f| %>
+      <%= hidden_field_tag :painting_id, @painting.id %>
+      <%= hidden_field_tag :emoji1_id, nil, id: 'emoji1_id', data: { emoji_target: 'emoji1Id' } %>
+      <%= hidden_field_tag :emoji2_id, nil, id: 'emoji2_id', data: { emoji_target: 'emoji2Id' } %>
+      <%= hidden_field_tag :emoji3_id, nil, id: 'emoji3_id', data: { emoji_target: 'emoji3Id' } %>
 
-    <div class="bouton-container">
-      <%= f.submit 'Valider', class: 'btn-submit bouton-container-top', disabled: true, id: 'submit-button', data: { emoji_target: 'submitButton' } %>
-      <div class="bouton-container-bottom"></div>
-    </div>
-  <% end %>
+      <div class="bouton-container">
+        <%= f.submit 'Valider', class: 'btn-submit bouton-container-top', disabled: true, id: 'submit-button', data: { emoji_target: 'submitButton' } %>
+        <div class="bouton-container-bottom"></div>
+      </div>
+    <% end %>
   </section>
 
-  <section id="thanks" class="container" data-controller="emoji">
-  <h1> Merci pour ta contribution</h1>
-  <p>Ta contribution a bien été envoyée </p>
+  <section id="thanks" class="container" data-step="2" data-target="step.section" hidden>
+    <h1>Merci pour ta contribution</h1>
+    <p>Ta contribution a bien été envoyée</p>
+    <button data-action="click->step#reset">Contribuer à nouveau</button>
   </section>
-</section>
+</div> 
 <%
 =end%>
 
@@ -72,11 +70,11 @@
       <p>Choisis 3 emojis pour décrire ce tableau.</p>
     </div>
     <div id="selected-emojis" class="emoji-selection-interface" data-emoji-target="selectedEmojis">
-    </div>
+      </div>
     <div id="emoji-selection" class="emoji-grid">
       <% @emojis.each do |emoji| %>
-        <div class="emoji-card text-center m-2">
-          <%= image_tag emoji.image, class: 'emoji', data: { emoji_id: emoji.id, action: 'click->emoji#addEmoji' } %>
+        <div class="emoji-card text-center m-2" data-emoji-id="<%= emoji.id %>" data-action="click->emoji#addEmoji">
+          <%= emoji.image %>
         </div>
       <% end %>
     </div>

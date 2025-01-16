@@ -8,6 +8,7 @@ Rails.application.routes.draw do
       post 'submit_answer'
       get 'contribute'
       post 'submit_contribution'
+      post 'reset_contributions'
     end
   end
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
