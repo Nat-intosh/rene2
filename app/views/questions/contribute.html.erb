@@ -82,7 +82,9 @@
       <% end %>
     </div>
 
-    <%= form_with url: submit_contribution_questions_path, method: :post, local: true do |f| %>
+    <button type="button" data-action="emoji#resetEmojis">Réinitialiser la sélection</button> <div id="selected-emojis" class="emoji-selection-interface" data-emoji-target="selectedEmojis">
+    
+    <%= form_with url: submit_contribution_questions_path, method: :post, local: true, data: { action: "submit->step#submitForm" } do |f| %>
     <%= hidden_field_tag :painting_id, @painting.id %>
     <%= hidden_field_tag :emoji1_id, nil, id: 'emoji1_id', data: { emoji_target: 'emoji1Id' } %>
     <%= hidden_field_tag :emoji2_id, nil, id: 'emoji2_id', data: { emoji_target: 'emoji2Id' } %>
@@ -92,6 +94,7 @@
     <div class="bouton-container">
       <%= f.submit 'Valider', class: 'btn-submit', disabled: true, id: 'submit-button', data: { emoji_target: 'submitButton' } %>
     </div>
+
     <% end %>
   </section>
 

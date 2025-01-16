@@ -72,6 +72,12 @@ h3 {
   height: 50px;
 }
 
+.emoji-card.selected {
+  opacity: 0.5; /* Reduce opacity to make it look grayed out */
+  cursor: default; /* Change cursor to indicate it's not clickable */
+  pointer-events: none; /* Prevent further clicks */
+}
+
 .emoji-results img{
   aspect-ratio: 50/50;
   object-fit: cover;
