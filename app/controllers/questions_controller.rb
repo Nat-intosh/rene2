@@ -49,8 +49,9 @@ class QuestionsController < ApplicationController
     contributions_count = session[:contributions_count].to_i || 0
 
     if contributions_count >= 3
+      session[:contributions_count] = 0
+      puts "miam"
       redirect_to home_finish_path
-      contributions_count = 0
       return
     end 
 
@@ -68,18 +69,29 @@ class QuestionsController < ApplicationController
     session[:contributions_count] = (session[:contributions_count] || 0) + 1
     contributions_count = session[:contributions_count].to_i
 
-    Question.create(
-      painting: painting,
-      emoji1: emoji1,
-      emoji2: emoji2,
-      emoji3: emoji3
-    )
+    if contributions_count == 1
+      Question.create(
+        painting: painting,
+        emoji1: emoji1,
+        emoji2: emoji2,
+        emoji3: emoji3
+      )
+    end
+
     if contributions_count >= 3
+      contributions_count = 0
+      puts "coucoucocucoucoucou"
       render json: { status: 'finished' }
     else 
       render json: { status: 'success' } # Return a JSON success response
     end
   end
+
+  def reset_contributions
+    session[:contributions_count] = 0 # Reset the counter
+    render json: { status: 'success' } # Send a success response
+  end
+
   # POST /questions or /questions.json
   def create
     @question = Question.new(question_params)

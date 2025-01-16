@@ -9,15 +9,13 @@
 #   end
 require 'json'
 
-file_path = Rails.root.join('db', 'paintings.json')
-paintings = JSON.parse(File.read(file_path))
+file_path = Rails.root.join('db', 'emojis.json')
+emojis = JSON.parse(File.read(file_path))
 
-paintings.each do |painting|
-  Painting.create!(
-    name: painting["name"],
-    author: painting["author"],
-    image: painting["image"],
-    date: painting["date"],
-    rebus: painting["rebus"]
+emojis.each do |emoji|
+  Emoji.create!(
+    name: emoji["name"],
+    image: emoji["image"],
+    category: emoji["category"]
   )
 end

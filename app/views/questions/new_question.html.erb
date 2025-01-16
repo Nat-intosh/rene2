@@ -4,9 +4,16 @@
     <p>Voici une liste d'emojis, devine quel tableau est décrit :</p>
   </div>
   <div class="emoji-combination d-flex justify-content-center">
-    <%= image_tag @question.emoji1.image, class: 'emoji emoji-results' %>
+    <%= @question.emoji1.image %>
+    <%= @question.emoji2.image %>
+    <%= @question.emoji3.image %>
+    <%
+=begin%>
+ <%= image_tag @question.emoji1.image, class: 'emoji emoji-results' %>
     <%= image_tag @question.emoji2.image, class: 'emoji emoji-results' %>
-    <%= image_tag @question.emoji3.image, class: 'emoji emoji-results' %>
+    <%= image_tag @question.emoji3.image, class: 'emoji emoji-results' %> 
+<%
+=end%>
   </div>
 
   <div data-controller="questions">

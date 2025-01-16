@@ -12,9 +12,13 @@
   </div>
     <div class="mt-3">
       <%= image_tag @question.painting.image, class: 'img-fluid' %>
-
-      <p class="result-text-false">C'était <span class="fst-italic fw-medium"> <%= @question.painting.name %> </span> de <%= @question.painting.author %> fait en <%= @question.painting.date %>.</p>
+      <div class="emoji-combination d-flex justify-content-center">
+        <%= @question.emoji1.image %>
+        <%= @question.emoji2.image %>
+        <%= @question.emoji3.image %>
+      </div>
+      <p>Il s'agissait de : <%= @question.painting.name %> par <%= @question.painting.author %> en <%= @question.painting.date %>.</p>
     </div>
   <% end %>
-  <%= link_to "Continuer", new_question_questions_path, class: "button-continue bouton-container" %>
+  <%= link_to "Continuer", new_question_questions_path, class: "btn btn-primary mt-4 button-continue" %>
 </div>
