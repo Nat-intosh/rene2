@@ -99,7 +99,20 @@ export default class extends Controller {
     this.updateSubmitButtonState();
   }
 
-  
+  resetEmojis() {
+    this.selected = []; // Clear the selected emojis array
+
+    // Clear the displayed selected emojis
+    this.selectedEmojisTarget.innerHTML = "";
+
+    // Reset the hidden form fields
+    this.emoji1IdTarget.value = null;
+    this.emoji2IdTarget.value = null;
+    this.emoji3IdTarget.value = null;
+
+    // Update the submit button state
+    this.updateSubmitButtonState();
+  }
   
   displaySelectedEmoji(emojiImage) {
     const container = document.createElement("div");
