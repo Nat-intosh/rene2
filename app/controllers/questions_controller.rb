@@ -1,5 +1,5 @@
 class QuestionsController < ApplicationController
-  before_action :set_question, only: %i[ show edit update destroy ]
+  before_action :set_question, only: %i[ show edit update destroy ], except: [:finish]
 
   # GET /questions or /questions.json
   def index
@@ -46,6 +46,14 @@ class QuestionsController < ApplicationController
   end
 
   def contribute
+    contributions_count = session[:contributions_count].to_i || 0
+
+    if contributions_count >= 3
+      redirect_to home_finish_path
+      contributions_count = 0
+      return
+    end 
+
     @painting = Painting.order('RANDOM()').first
     @emojis = Emoji.all
     @selected_emojis = []
@@ -57,15 +65,20 @@ class QuestionsController < ApplicationController
     emoji2 = Emoji.find(params[:emoji2_id])
     emoji3 = Emoji.find(params[:emoji3_id])
 
+    session[:contributions_count] = (session[:contributions_count] || 0) + 1
+    contributions_count = session[:contributions_count].to_i
+
     Question.create(
       painting: painting,
       emoji1: emoji1,
       emoji2: emoji2,
       emoji3: emoji3
     )
-
-    flash[:success] = "Merci pour votre contribution !"
-    redirect_to finish_path
+    if contributions_count >= 3
+      render json: { status: 'finished' }
+    else 
+      render json: { status: 'success' } # Return a JSON success response
+    end
   end
   # POST /questions or /questions.json
   def create
@@ -95,6 +108,9 @@ class QuestionsController < ApplicationController
     end
   end
 
+  def finish
+    contributions_count = 0
+  end
   # DELETE /questions/1 or /questions/1.json
   def destroy
     @question.destroy!
