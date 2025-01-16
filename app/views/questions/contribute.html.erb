@@ -48,13 +48,22 @@
 =end%>
 
 <div data-controller="step">
-  <section id="welcome" class="container" data-step="0" data-target="step.section">
-    <h1>Déplace toi</h1>
-    <p>Veuillez vous diriger vers la peinture : <strong><%= @painting.name %></strong></p>
-    <div class="painting text-center">
-      <%= image_tag @painting.image, class: 'painting-image mb-4' %>
+  <section id="welcome" class="container page" data-step="0" data-target="step.section">
+    <div class="contribute-location-top">
+      <h2>Décris le tableau 🎨 </h2>
+      <div class="contribute-location-text">
+        <p>Maintenant, à toi de jouer, mon pote ! Pas de bonnes ou mauvaises réponses, laisse ton swag s’exprimer...</p>
+        <p>Tu vas devoir décrire ce tableau :</p>
+        <p><strong><%= @painting.name %></strong> de <%= @painting.author %> fait en <%= @painting.date %></p>
+      </div>
     </div>
-    <button data-action="click->step#next">Suivant</button>
+    <div class="contribute-text-image">
+      <div class="painting-location">
+        <%= image_tag @painting.image %>
+      </div>
+      <p>Trouve-le dans la salle du musée.</p>
+    </div>
+    <button class="bouton-container" data-action="click->step#next">J'y suis</button>
   </section>
 
   <section id="contribution" class="container page" data-controller="emoji" data-step="1" data-target="step.section" hidden>

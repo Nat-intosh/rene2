@@ -22,3 +22,32 @@
   height: auto;
   max-height: 300px;
 }
+
+.contribute-location-text {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.contribute-location-top {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.painting-location {
+  width: 100%;
+  height: auto;
+  margin-top: 24px;
+}
+
+.painting-location img {
+  width: 100%;
+}
+
+.contribute-text-image {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 32px;
+}

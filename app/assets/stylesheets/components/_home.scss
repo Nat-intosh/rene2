@@ -33,3 +33,32 @@
   flex-direction: column;
   gap: 15px;
 }
+
+.home-top-section {
+  display: flex;
+  position: relative;
+  width: 100%;
+  height: 45vh;
+  overflow: hidden;
+}
+
+.home-top-section img{
+  width: 100%;
+}
+
+.home-emoji-top {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  bottom: -10px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.home-big-emoji {
+  background-color: white;
+  padding: 8px;
+  border-radius: 24px;
+  font-size: 165px;
+}
