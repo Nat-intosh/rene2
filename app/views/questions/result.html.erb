@@ -1,19 +1,20 @@
-<div class="container mt-5 result-page" data-controller="questions">
+<div class="container page result-page" data-controller="questions">
   <% if @success %>
-    <h1>Devine le tableau</h1>
-    <p><%= @result_message %></p>
+    <div class="result-top">
+      <h2>Bonne réponse ! &#x1F525</h2>
+      <p><%= @result_message %> &#x1F440</p>
+      <p class="big-emoji">&#x1F60E</p>
+    </div>
   <% else %>
-    <h1>Devine le tableau</h1>
+  <div class="result-top">
+    <h2>C'est raté ! &#x1F605</h2>
     <p><%= @result_message %></p>
+  </div>
     <div class="mt-3">
       <%= image_tag @question.painting.image, class: 'img-fluid' %>
-      <div class="emoji-combination d-flex justify-content-center">
-        <%= image_tag @question.emoji1.image, class: 'emoji emoji-results' %>
-        <%= image_tag @question.emoji2.image, class: 'emoji emoji-results' %>
-        <%= image_tag @question.emoji3.image, class: 'emoji emoji-results' %>
-      </div>
-      <p>Il s'agissait de : <%= @question.painting.name %> par <%= @question.painting.author %> en <%= @question.painting.date %>.</p>
+
+      <p class="result-text-false">C'était <span class="fst-italic fw-medium"> <%= @question.painting.name %> </span> de <%= @question.painting.author %> fait en <%= @question.painting.date %>.</p>
     </div>
   <% end %>
-  <%= link_to "Continuer", new_question_questions_path, class: "btn btn-primary mt-4 button-continue" %>
+  <%= link_to "Continuer", new_question_questions_path, class: "button-continue bouton-container" %>
 </div>

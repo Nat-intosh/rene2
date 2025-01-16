@@ -1,34 +1,58 @@
 @import 'bootstrap/scss/bootstrap';
 @import 'bootstrap-icons/font/bootstrap-icons';
 
-@import url('https://fonts.googleapis.com/css2?family=Jersey+10&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap');
 
-$bleu : #0D398F;
+$black : #000000;
 $rose : #E952B3;
+$rose-clair : #EFB9D3;
 
 //---------------------main----------------------------------
 
 p {
-  color: $bleu;
-  font-family: "Kanit";
+  color: $black;
+  margin: unset !important;
+  font-family: "IBM Plex Sans";
   font-size: 16px;
   font-style: normal;
   font-weight: 400;
-  line-height: normal;
-  margin: unset !important;
+  line-height: 140%;
 }
 
 h1 {
-  color: $bleu !important;
-  font-family: "Jersey 10";
-  font-size: 35px !important;
+  color: $black !important;
+  font-family: "IBM Plex Mono";
+  font-size: 40px !important;
   font-style: normal;
-  font-weight: 400;
-  line-height: normal;
+  font-weight: 700 !important;
+  line-height: 110% !important;
   margin: unset !important;
 }
 
+h2 {
+  font-family: "IBM Plex Mono" !important;
+  font-size: 24px !important;
+  font-style: normal !important;
+  font-weight: 700 !important;
+  line-height: 115% !important;
+  margin: unset !important;
+}
+
+h3 {
+  font-family: "IBM Plex Mono" !important;
+  font-size: 18px !important;
+  font-style: normal !important;
+  font-weight: 700 !important;
+  line-height: 120% !important;
+  margin: unset !important;
+  margin-bottom: 4px !important;
+}
+
+.page {
+  margin-top: 24px;
+  margin-bottom: 24px;
+}
 //---------------------buttons----------------------------------
 
 
@@ -54,12 +78,7 @@ h1 {
   border: solid black 1px;
 }
 
-.emoji-combination {
-  display: flex;
-  gap: 16px;
-  margin-top: 32px;
-  margin-bottom: 32px;
-}
+
 
 .button-continue {
   display: flex;
@@ -70,10 +89,7 @@ h1 {
 
 
 
-.emoji {
-  width: 48px;
-  height: 48px;
-}
+
 
 .bouton-container {
   display: flex;
@@ -90,7 +106,7 @@ h1 {
   position: absolute;
   top: 0;
   left: 0;
-  background-color: $bleu;
+  background-color: $black;
   z-index: 2;
   border-radius: 3px;
   color: white !important;

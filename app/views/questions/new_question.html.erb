@@ -1,31 +1,12 @@
-<section class="container mt-4">
+<section class="container page">
   <div class="new-questions-text-section">
-    <h1>Devine le tableau</h1>
+    <h2>Devine le tableau !</h2>
     <p>Voici une liste d'emojis, devine quel tableau est décrit :</p>
   </div>
   <div class="emoji-combination d-flex justify-content-center">
     <%= image_tag @question.emoji1.image, class: 'emoji emoji-results' %>
     <%= image_tag @question.emoji2.image, class: 'emoji emoji-results' %>
     <%= image_tag @question.emoji3.image, class: 'emoji emoji-results' %>
-  </div>
-
-  <button type="button" class="bouton-indice" data-bs-toggle="modal" data-bs-target="#exampleModal">
-    Aidez-moi
-  </button>
-
-  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered">
-      <div class="modal-content">
-        <div class="modal-header">
-          <p class="modal-title fs-5" id="exampleModalLabel">Voici un indice pour t’aider !</p>
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-        </div>
-        <div class="modal-body">
-
-
-        </div>
-      </div>
-    </div>
   </div>
 
   <div data-controller="questions">
@@ -46,10 +27,36 @@
     <% end %>
   </div>
 
+  <div class="question-buttons-section">
 
-    <div class="submit-button-container mt-3">
-      <%= f.submit 'Valider', class: 'btn btn-primary', data: { action: "click->questions#submitQuestion" } %>
+      <button type="button" class="bouton-indice" data-bs-toggle="modal" data-bs-target="#exampleModal">
+      Aidez-moi
+    </button>
+
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">
+            <p class="modal-title fs-5" id="exampleModalLabel">Voici un indice pour t’aider !</p>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+
+            <%= image_tag @question.painting.rebus, class: 'emoji emoji-rebus' %>
+
+
+
+          </div>
+        </div>
+      </div>
     </div>
-    <% end %>
+
+
+      <div class="submit-button-container">
+        <%= f.submit 'Valider', class: 'bouton-container', data: { action: "click->questions#submitQuestion" } %>
+      </div>
+      <% end %>
+    </div>
+
   </div>
 </section>

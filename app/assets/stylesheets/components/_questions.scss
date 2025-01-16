@@ -38,6 +38,7 @@
   grid-template-columns: 1fr 1fr;
   grid-template-rows: 1fr 1fr;
   gap: 78px 0px;
+  margin-bottom: 64px;
 }
 
 .painting-description {
@@ -55,4 +56,41 @@
 
 .modal-header {
   border: none !important;
+}
+
+.result-top {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.big-emoji {
+  font-size: 212px;
+  display: flex;
+  justify-content: center;
+  padding-top: 64px;
+  padding-bottom: 64px;
+}
+
+.question-buttons-section {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.emoji-combination {
+  display: flex;
+  gap: 18px;
+  margin-top: 24px;
+  margin-bottom: 24px;
+}
+
+.emoji {
+  width: 52px;
+  height: 52px;
+}
+
+.result-text-false {
+  margin-top: 24px !important;
+  margin-bottom: 24px !important;
 }

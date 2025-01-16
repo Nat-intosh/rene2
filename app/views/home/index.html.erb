@@ -1,34 +1,22 @@
-<section class="home-background">
-
-  <div class="home-top-section">
-    <%= image_tag "portrait.svg" %>
-    <%= image_tag "interogation.svg" %>
-  </div>
-
-
-  <div class="home-bottom-section">
-
-    <%= image_tag "wave.svg" %>
+<section>
+    <div class="home-title-section">
+      <h1 class="text-uppercase main-title">Musémoji</h1>
+      <p>Devine le tableau... avec des emojis</p>
+    </div>
 
     <div class="home-buttons-section container">
       <%= link_to home_intro_path do %>
       <div class="bouton-container">
-        <div class="bouton-container-top">
-          Jouer
-        </div>
-        <div class="bouton-container-bottom">
-        </div>
+        Jouer
       </div>
       <% end %>
-      <%= link_to home_credits_path do %>
-      <div class="bouton-container">
-        <div class="bouton-container-top">
-          Crédits
-        </div>
-        <div class="bouton-container-bottom">
-        </div>
+      <div class="credits-bouton-container">
+        <%= link_to home_credits_path do %>
+          <div class="bouton-credits">
+            Crédits
+          </div>
+        <% end %>
       </div>
-      <% end %>
     </div>
 
   </div>

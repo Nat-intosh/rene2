@@ -31,11 +31,11 @@
 <%
 =end%>
 
-<section class="container" data-controller="emoji">
-  <h1>Décris le tableau</h1>
-
-  <p>Choisis 3 emojis pour décrire ce tableau.</p>
-
+<section class="container page" data-controller="emoji">
+  <div class="result-top">
+    <h2>Décris le tableau &#x1F3A8</h2>
+    <p>Choisis 3 emojis pour décrire ce tableau.</p>
+  </div>
   <div id="selected-emojis" class="emoji-selection-interface" data-emoji-target="selectedEmojis">
   </div>
 
@@ -56,8 +56,7 @@
   <%= hidden_field_tag :emoji3_id, nil, id: 'emoji3_id', data: { emoji_target: 'emoji3Id' } %>
 
   <div class="bouton-container">
-    <%= f.submit 'Valider', class: 'btn-submit bouton-container-top', disabled: true, id: 'submit-button', data: { emoji_target: 'submitButton' } %>
-    <div class="bouton-container-bottom"></div>
+    <%= f.submit 'Valider', class: 'btn-submit', disabled: true, id: 'submit-button', data: { emoji_target: 'submitButton' } %>
   </div>
 <% end %>
 </section>

@@ -1,47 +1,33 @@
 .bouton-container {
   display: flex;
-  position: relative;
   width: 100%;
-  height: 64px;
+  height: 57px;
+  font-family: "IBM Plex Mono";
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 100%;
+  background-color: $black;
   color: white;
-  font-family: "Jersey 10";
-}
-
-.bouton-container-top {
-  width: 98%;
-  height: 90%;
-  position: absolute;
-  top: 0;
-  left: 0;
-  background-color: $bleu;
-  z-index: 2;
-  border-radius: 3px;
-  color: white !important;
-  text-decoration: none;
-  font-size: 35px;
   justify-content: center;
-  display: flex;
-}
-
-.bouton-container-bottom {
-  width: 98%;
-  height: 90%;
-  position: absolute;
-  right: 0;
-  bottom: 0;
-  background-color: $rose;
-  border-radius: 3px;
+  align-items: center;
+  text-decoration: none;
+  border: none;
 }
 
 .bouton-indice {
-  background-color: $rose;
-  font-family: "Jersey 10";
+  background-color: $black;
+  color: white;
+  font-family: "IBM Plex Sans";
   font-size: 16px;
   border: none;
-  color: white;
-  border-radius: 4px;
-  padding: 6px 12px;
+  padding: 8px 18px;
   display: flex;
   margin-left: auto;
   margin-right: auto;
+}
+
+.credits-bouton-container {
+  display: flex;
+  justify-content: center;
 }

@@ -1,3 +1,10 @@
+.main-title {
+  font-size: 48px !important;
+  font-style: normal !important;
+  font-weight: 700 !important;
+  line-height: 100% !important;
+}
+
 .home-buttons-section {
   display: flex;
   flex-direction: column;
@@ -7,23 +14,22 @@
   padding-top: 12px;
 }
 
-.home-background {
+.bouton-credits {
+  color: $black;
+  text-decoration: underline;
+  font-family: "IBM Plex Mono";
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 400;
   display: flex;
-  flex-direction: column;
-  background-color: $rose;
-  height: 100vh;
-  width: 100%;
-  justify-content: space-between;
+  margin-left: auto;
+  margin-right: auto;
 }
 
-.home-bottom-section {
+.home-title-section {
+  text-align: center;
+  width: 230px;
   display: flex;
   flex-direction: column;
-}
-
-.home-top-section {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding-top: 24px;
+  gap: 15px;
 }

@@ -37,7 +37,7 @@ class QuestionsController < ApplicationController
       @success = true
     else
       session[:correct_answers] = 0
-      @result_message = "Ah, mince... Mauvaise réponse..."
+      @result_message = "Ah, mince... Pas très futé, le farfadet. Mauvaise réponse..."
       @success = false
     end
 
