@@ -41,7 +41,7 @@
     <p>Ta contribution a bien été envoyée</p>
     <button data-action="click->step#reset">Contribuer à nouveau</button>
   </section>
-</div> 
+</div>
 <%
 =end%>
 
@@ -69,9 +69,12 @@
       <h2>Décris le tableau &#x1F3A8</h2>
       <p>Choisis 3 emojis pour décrire ce tableau.</p>
     </div>
-    <div id="selected-emojis" class="emoji-selection-interface" data-emoji-target="selectedEmojis">
-      </div>
-    <div id="emoji-selection" class="emoji-grid">
+    <div class="emoji-selection-container mt-4">
+      <p class="fw-bold mb-2">Voici ta saisie :</p>
+      <div id="selected-emojis" class="emoji-selection-interface" data-emoji-target="selectedEmojis"></div>
+    </div>
+      <p class="fw-bold mb-2">Sélectionne trois emoji dans la liste suivante :</p>
+      <div id="emoji-selection" class="emoji-grid">
       <% @emojis.each do |emoji| %>
         <div class="emoji-card text-center m-2" data-emoji-id="<%= emoji.id %>" data-action="click->emoji#addEmoji">
           <%= emoji.image %>

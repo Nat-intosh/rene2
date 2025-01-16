@@ -4,14 +4,22 @@
   height: 52px;
   justify-content: center;
   align-items: center;
-  margin-top: 18px;
   margin-bottom: 18px;
   border: 1px solid $black;
   border-radius: 2px;
+  font-size: 35px;
+}
+
+.emoji-selection-container {
+  display: flex;
+  flex-direction: column;
 }
 
 .emoji-card {
   height: fit-content;
+  font-size: 32px;
+  width: 55px;
+  height: 55px;
 }
 
 .emoji-grid {
@@ -21,6 +29,9 @@
   width: 100%;
   height: auto;
   max-height: 300px;
+  border: solid 1px $black;
+  margin-bottom: 32px;
+  justify-content: center;
 }
 
 .contribute-location-text {

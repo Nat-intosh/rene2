@@ -83,6 +83,7 @@
   gap: 18px;
   margin-top: 24px;
   margin-bottom: 24px;
+  font-size: 52px;
 }
 
 .emoji {
@@ -93,4 +94,12 @@
 .result-text-false {
   margin-top: 24px !important;
   margin-bottom: 24px !important;
+}
+
+.result-false-image {
+  margin-top: 24px !important;
+  margin-bottom: 24px !important;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
 }
