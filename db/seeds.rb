@@ -19,3 +19,17 @@ emojis.each do |emoji|
     category: emoji["category"]
   )
 end
+
+
+file_path = Rails.root.join('db', 'paintings.json')
+paintings = JSON.parse(File.read(file_path))
+
+paintings.each do |painting|
+  Painting.create!(
+    name: painting["name"],
+    image: painting["image"],
+    rebus: painting["rebus"],
+    date: painting["date"],
+    author: painting["author"]
+  )
+end

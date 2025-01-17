@@ -1,1217 +1,582 @@
 [
-    {
-        "name": "Ange",
-        "image": "👼",
-        "category": "visage"
-    },
-    {
-        "name": "Sourire",
-        "image": "😀",
-        "category": "visage"
-    },
-    {
-        "name": "Sourire large",
-        "image": "😃",
-        "category": "visage"
-    },
-    {
-        "name": "Sourire rayonnant",
-        "image": "😄",
-        "category": "visage"
-    },
-    {
-        "name": "Sourire avec dents",
-        "image": "😁",
-        "category": "visage"
-    },
-    {
-        "name": "Rire",
-        "image": "😆",
-        "category": "visage"
-    },
-    {
-        "name": "Rire gêné",
-        "image": "😅",
-        "category": "visage"
-    },
-    {
-        "name": "Mourir de rire",
-        "image": "🤣",
-        "category": "visage"
-    },
-    {
-        "name": "Rire aux larmes",
-        "image": "😂",
-        "category": "visage"
-    },
-    {
-        "name": "Sourire calme",
-        "image": "🙂",
-        "category": "visage"
-    },
-    {
-        "name": "Sourire inversé",
-        "image": "🙃",
-        "category": "visage"
-    },
-    {
-        "name": "Fondre de chaleur",
-        "image": "🫠",
-        "category": "visage"
-    },
-    {
-        "name": "Clin d’œil",
-        "image": "😉",
-        "category": "visage"
-    },
-    {
-        "name": "Sourire content",
-        "image": "😊",
-        "category": "visage"
-    },
-    {
-        "name": "Ange heureux",
-        "image": "😇",
-        "category": "visage"
-    },
-    {
-        "name": "Amour tendre",
-        "image": "🥰",
-        "category": "visage"
-    },
-    {
-        "name": "Amour",
-        "image": "😍",
-        "category": "visage"
-    },
-    {
-        "name": "Euphorie",
-        "image": "🤩",
-        "category": "visage"
-    },
-    {
-        "name": "Bisou cœur",
-        "image": "😘",
-        "category": "visage"
-    },
-    {
-        "name": "Bisou",
-        "image": "😗",
-        "category": "visage"
-    },
-    {
-        "name": "Visage content",
-        "image": "☺️",
-        "category": "visage"
-    },
-    {
-        "name": "Bisou timide",
-        "image": "😚",
-        "category": "visage"
-    },
-    {
-        "name": "Bisou souriant",
-        "image": "😙",
-        "category": "visage"
-    },
-    {
-        "name": "Larmes de joie",
-        "image": "🥲",
-        "category": "visage"
-    },
-    {
-        "name": "Content gourmand",
-        "image": "😋",
-        "category": "visage"
-    },
-    {
-        "name": "Tirer la langue",
-        "image": "😛",
-        "category": "visage"
-    },
-    {
-        "name": "Taquin",
-        "image": "😜",
-        "category": "visage"
-    },
-    {
-        "name": "Fou amusé",
-        "image": "🤪",
-        "category": "visage"
-    },
-    {
-        "name": "Tirer la langue content",
-        "image": "😝",
-        "category": "visage"
-    },
-    {
-        "name": "Avide",
-        "image": "🤑",
-        "category": "visage"
-    },
-    {
-        "name": "Câlin",
-        "image": "🤗",
-        "category": "visage"
-    },
-    {
-        "name": "Gêne",
-        "image": "🤭",
-        "category": "visage"
-    },
-    {
-        "name": "Surpris",
-        "image": "🫢",
-        "category": "visage"
-    },
-    {
-        "name": "Gêné caché",
-        "image": "🫣",
-        "category": "visage"
-    },
-    {
-        "name": "Silence",
-        "image": "🤫",
-        "category": "visage"
-    },
-    {
-        "name": "Pensif",
-        "image": "🤔",
-        "category": "visage"
-    },
-    {
-        "name": "Respect solennel",
-        "image": "🫡",
-        "category": "visage"
-    },
-    {
-        "name": "Bouche cousue",
-        "image": "🤐",
-        "category": "visage"
-    },
-    {
-        "name": "Soupçonneux",
-        "image": "🤨",
-        "category": "visage"
-    },
-    {
-        "name": "Neutre",
-        "image": "😐",
-        "category": "visage"
-    },
-    {
-        "name": "Sans expression",
-        "image": "😑",
-        "category": "visage"
-    },
-    {
-        "name": "Muet",
-        "image": "😶",
-        "category": "visage"
-    },
-    {
-        "name": "Visage flou",
-        "image": "😶‍🌫️",
-        "category": "visage"
-    },
-    {
-        "name": "Sournois",
-        "image": "😏",
-        "category": "visage"
-    },
-    {
-        "name": "Déçu",
-        "image": "😒",
-        "category": "visage"
-    },
-    {
-        "name": "Roulement des yeux",
-        "image": "🙄",
-        "category": "visage"
-    },
-    {
-        "name": "Gêné crispé",
-        "image": "😬",
-        "category": "visage"
-    },
-    {
-        "name": "Soupir",
-        "image": "😮‍💨",
-        "category": "visage"
-    },
-    {
-        "name": "Mensonge",
-        "image": "🤥",
-        "category": "visage"
-    },
-    {
-        "name": "Expression d’effroi",
-        "image": "🫨",
-        "category": "visage"
-    },
-    {
-        "name": "Rêveur",
-        "image": "😌",
-        "category": "visage"
-    },
-    {
-        "name": "Triste",
-        "image": "😔",
-        "category": "visage"
-    },
-    {
-        "name": "Somnolent",
-        "image": "😪",
-        "category": "visage"
-    },
-    {
-        "name": "Baveur",
-        "image": "🤤",
-        "category": "visage"
-    },
-    {
-        "name": "Endormi",
-        "image": "😴",
-        "category": "visage"
-    },
-    {
-        "name": "Malade",
-        "image": "😷",
-        "category": "visage"
-    },
-    {
-        "name": "Fiévreux",
-        "image": "🤒",
-        "category": "visage"
-    },
-    {
-        "name": "Blessé",
-        "image": "🤕",
-        "category": "visage"
-    },
-    {
-        "name": "Nauséeux",
-        "image": "🤢",
-        "category": "visage"
-    },
-    {
-        "name": "Vomissant",
-        "image": "🤮",
-        "category": "visage"
-    },
-    {
-        "name": "Allergique",
-        "image": "🤧",
-        "category": "visage"
-    },
-    {
-        "name": "Chaud extrême",
-        "image": "🥵",
-        "category": "visage"
-    },
-    {
-        "name": "Froid extrême",
-        "image": "🥶",
-        "category": "visage"
-    },
-    {
-        "name": "Étourdi",
-        "image": "🥴",
-        "category": "visage"
-    },
-    {
-        "name": "Abasourdi",
-        "image": "😵",
-        "category": "visage"
-    },
-    {
-        "name": "Hypnotisé",
-        "image": "😵‍💫",
-        "category": "visage"
-    },
-    {
-        "name": "Explosion mentale",
-        "image": "🤯",
-        "category": "visage"
-    },
-    {
-        "name": "Cowboy",
-        "image": "🤠",
-        "category": "visage"
-    },
-    {
-        "name": "Fête",
-        "image": "🥳",
-        "category": "visage"
-    },
-    {
-        "name": "Déguisé",
-        "image": "🥸",
-        "category": "visage"
-    },
-    {
-        "name": "Cool",
-        "image": "😎",
-        "category": "visage"
-    },
-    {
-        "name": "Nerd",
-        "image": "🤓",
-        "category": "visage"
-    },
-    {
-        "name": "Detective",
-        "image": "🧐",
-        "category": "visage"
-    },
-    {
-        "name": "Confus",
-        "image": "😕",
-        "category": "visage"
-    },
-    {
-        "name": "Sceptique",
-        "image": "🫤",
-        "category": "visage"
-    },
-    {
-        "name": "Tristesse légère",
-        "image": "😟",
-        "category": "visage"
-    },
-    {
-        "name": "Déprimé",
-        "image": "🙁",
-        "category": "visage"
-    },
-    {
-        "name": "Désolé",
-        "image": "☹️",
-        "category": "visage"
-    },
-    {
-        "name": "Étonné",
-        "image": "😮",
-        "category": "visage"
-    },
-    {
-        "name": "Surprise légère",
-        "image": "😯",
-        "category": "visage"
-    },
-    {
-        "name": "Choqué",
-        "image": "😲",
-        "category": "visage"
-    },
-    {
-        "name": "Rougeur gênée",
-        "image": "😳",
-        "category": "visage"
-    },
-    {
-        "name": "Pleading visage",
-        "image": "🥺",
-        "category": "visage"
-    },
-    {
-        "name": "Pleading renforcé",
-        "image": "🥹",
-        "category": "visage"
-    },
-    {
-        "name": "Effrayé",
-        "image": "😦",
-        "category": "visage"
-    },
-    {
-        "name": "Désespéré",
-        "image": "😧",
-        "category": "visage"
-    },
-    {
-        "name": "Terrifié",
-        "image": "😨",
-        "category": "visage"
-    },
-    {
-        "name": "En panique",
-        "image": "😰",
-        "category": "visage"
-    },
-    {
-        "name": "Triste et frustré",
-        "image": "😥",
-        "category": "visage"
-    },
-    {
-        "name": "Larmes de tristesse",
-        "image": "😢",
-        "category": "visage"
-    },
-    {
-        "name": "Pleurer",
-        "image": "😭",
-        "category": "visage"
-    },
-    {
-        "name": "Effroi",
-        "image": "😱",
-        "category": "visage"
-    },
-    {
-        "name": "Frustré",
-        "image": "😖",
-        "category": "visage"
-    },
-    {
-        "name": "En colère",
-        "image": "😣",
-        "category": "visage"
-    },
-    {
-        "name": "Triste intense",
-        "image": "😞",
-        "category": "visage"
-    },
-    {
-        "name": "Fatigué",
-        "image": "😓",
-        "category": "visage"
-    },
-    {
-        "name": "Désespoir intense",
-        "image": "😩",
-        "category": "visage"
-    },
-    {
-        "name": "Epuisé",
-        "image": "😫",
-        "category": "visage"
-    },
-    {
-        "name": "Bailler",
-        "image": "🥱",
-        "category": "visage"
-    },
-    {
-        "name": "Fâché fumant",
-        "image": "😤",
-        "category": "visage"
-    },
-    {
-        "name": "Fâché léger",
-        "image": "😡",
-        "category": "visage"
-    },
-    {
-        "name": "Colère",
-        "image": "😠",
-        "category": "visage"
-    },
-    {
-        "name": "Furieux",
-        "image": "🤬",
-        "category": "visage"
-    },
-    {
-        "name": "Diable joyeux",
-        "image": "😈",
-        "category": "visage"
-    },
-    {
-        "name": "Diable méchant",
-        "image": "👿",
-        "category": "visage"
-    },
-    {
-        "name": "Crâne",
-        "image": "💀",
-        "category": "visage"
-    },
-    {
-        "name": "Tête de mort",
-        "image": "☠️",
-        "category": "visage"
-    },
-    {
-        "name": "Visage souriant",
-        "image": "☺️",
-        "category": "visage"
-    },
-    {
-        "name": "Fête",
-        "image": "🥳",
-        "category": "visage"
-    },
-    {
-        "name": "Expression d’effroi",
-        "image": "🫨",
-        "category": "visage"
-    },
-    {
-        "name": "Diable joyeux",
-        "image": "😈",
-        "category": "visage"
-    },
-    {
-        "name": "Femme",
-        "image": "👩",
-        "category": "visage"
-    },
-    {
-        "name": "Homme",
-        "image": "👨",
-        "category": "visage"
-    },
-    {
-        "name": "Ange",
-        "image": "👼🏻",
-        "category": "visage"
-    },
-    {
-        "name": "Chien",
-        "image": "🐶",
-        "category": "visage"
-    },
-    {
-        "name": "Cheval",
-        "image": "🐴",
-        "category": "visage"
-    },
-    {
-        "name": "Toile d'araignée",
-        "image": "🕸️",
-        "category": "objet"
-    },
-    {
-        "name": "Arbre",
-        "image": "🌳",
-        "category": "objet"
-    },
-    {
-        "name": "Plante",
-        "image": "🌱",
-        "category": "objet"
-    },
-    {
-        "name": "Fleur",
-        "image": "🌷",
-        "category": "objet"
-    },
-    {
-        "name": "Marguerite",
-        "image": "🌼",
-        "category": "objet"
-    },
-    {
-        "name": "Lune noire",
-        "image": "🌚",
-        "category": "objet"
-    },
-    {
-        "name": "Lune blanche",
-        "image": "🌝",
-        "category": "objet"
-    },
-    {
-        "name": "Étoile",
-        "image": "⭐️",
-        "category": "objet"
-    },
-    {
-        "name": "Nuage",
-        "image": "☁️",
-        "category": "objet"
-    },
-    {
-        "name": "Pluie",
-        "image": "🌧️",
-        "category": "objet"
-    },
-    {
-        "name": "Flamme",
-        "image": "🔥",
-        "category": "objet"
-    },
-    {
-        "name": "Explosion",
-        "image": "💥",
-        "category": "objet"
-    },
-    {
-        "name": "Pomme",
-        "image": "🍎",
-        "category": "nourriture"
-    },
-    {
-        "name": "Raisin",
-        "image": "🍇",
-        "category": "nourriture"
-    },
-    {
-        "name": "Poire",
-        "image": "🍐",
-        "category": "nourriture"
-    },
-    {
-        "name": "Maïs",
-        "image": "🌽",
-        "category": "nourriture"
-    },
-    {
-        "name": "Poulet",
-        "image": "🍗",
-        "category": "nourriture"
-    },
-    {
-        "name": "Couverts",
-        "image": "🍴",
-        "category": "nourriture"
-    },
-    {
-        "name": "Temple",
-        "image": "🏛️",
-        "category": "lieu"
-    },
-    {
-        "name": "Maison",
-        "image": "🏠",
-        "category": "lieu"
-    },
-    {
-        "name": "Montagne",
-        "image": "🏔️",
-        "category": "lieu"
-    },
-    {
-        "name": "Argent",
-        "image": "💰",
-        "category": "objet"
-    },
-    {
-        "name": "Épée",
-        "image": "⚔️",
-        "category": "objet"
-    },
-    {
-        "name": "Bouclier",
-        "image": "🛡️",
-        "category": "objet"
-    },
-    {
-        "name": "Cigarette",
-        "image": "🚬",
-        "category": "objet"
-    },
-    {
-        "name": "Cercueil",
-        "image": "⚰️",
-        "category": "objet"
-    },
-    {
-        "name": "Tombe",
-        "image": "🪦",
-        "category": "lieu"
-    },
-    {
-        "name": "Couteau",
-        "image": "🔪",
-        "category": "objet"
-    },
-    {
-        "name": "Dague",
-        "image": "🗡️",
-        "category": "objet"
-    },
-    {
-        "name": "Sang",
-        "image": "🩸",
-        "category": "objet"
-    },
-    {
-        "name": "Clé",
-        "image": "🔑",
-        "category": "objet"
-    },
-    {
-        "name": "Lit",
-        "image": "🛌",
-        "category": "objet"
-    },
-    {
-        "name": "Baguette magique",
-        "image": "🪄",
-        "category": "objet"
-    },
-    {
-        "name": "Cadeau",
-        "image": "🎁",
-        "category": "objet"
-    },
-    {
-        "name": "Confettis",
-        "image": "🎉",
-        "category": "objet"
-    },
-    {
-        "name": "Boule disco",
-        "image": "🪩",
-        "category": "objet"
-    },
-    {
-        "name": "Ciseaux",
-        "image": "✂️",
-        "category": "objet"
-    },
-    {
-        "name": "Trombone",
-        "image": "📎",
-        "category": "objet"
-    },
-    {
-        "name": "Crayon",
-        "image": "✏️",
-        "category": "objet"
-    },
-    {
-        "name": "Cœur rose",
-        "image": "🩷",
-        "category": "objet"
-    },
-    {
-        "name": "Soleil",
-        "image": "🔆",
-        "category": "objet"
-    },
-    {
-        "name": "Fleur de lys",
-        "image": "⚜️",
-        "category": "objet"
-    },
-    {
-        "name": "Pensée",
-        "image": "💭",
-        "category": "objet"
-    },
-    {
-        "name": "Parole",
-        "image": "🗯️",
-        "category": "objet"
-    },
-    {
-        "name": "Drapeau",
-        "image": "🚩",
-        "category": "objet"
-    },
-    {
-        "name": "Fou amusé",
-        "image": "🤪",
-        "category": "visage"
-    },
-    {
-        "name": "Déguisé",
-        "image": "🥸",
-        "category": "visage"
-    },
-    {
-        "name": "Rougeur gênée",
-        "image": "😳",
-        "category": "visage"
-    },
-    {
-        "name": "Explosion mentale",
-        "image": "🤯",
-        "category": "visage"
-    },
-    {
-        "name": "Fondre de chaleur",
-        "image": "🫠",
-        "category": "visage"
-    },
-    {
-        "name": "Démon méchant",
-        "image": "👺",
-        "category": "visage"
-    },
-    {
-        "name": "Fantôme",
-        "image": "👻",
-        "category": "visage"
-    },
-    {
-        "name": "Alien",
-        "image": "👽",
-        "category": "visage"
-    },
-    {
-        "name": "Main ouverte",
-        "image": "👐",
-        "category": "objet"
-    },
-    {
-        "name": "Geste présentation",
-        "image": "🫷🏻",
-        "category": "objet"
-    },
-    {
-        "name": "Pointeur gauche",
-        "image": "👈🏻",
-        "category": "objet"
-    },
-    {
-        "name": "Œil",
-        "image": "👁️",
-        "category": "objet"
-    },
-    {
-        "name": "Oreille",
-        "image": "👂",
-        "category": "objet"
-    },
-    {
-        "name": "Groupe",
-        "image": "👥",
-        "category": "objet"
-    },
-    {
-        "name": "Câlin",
-        "image": "🫂",
-        "category": "objet"
-    },
-    {
-        "name": "Silhouette",
-        "image": "👤",
-        "category": "objet"
-    },
-    {
-        "name": "Parole",
-        "image": "🗣️",
-        "category": "objet"
-    },
-    {
-        "name": "Homme dansant",
-        "image": "🕺🏻",
-        "category": "visage"
-    },
-    {
-        "name": "Femme dansante",
-        "image": "💃",
-        "category": "visage"
-    },
-    {
-        "name": "Sommeil",
-        "image": "😴",
-        "category": "visage"
-    },
-    {
-        "name": "Colère",
-        "image": "😡",
-        "category": "visage"
-    },
-    {
-        "name": "Crâne",
-        "image": "💀",
-        "category": "objet"
-    },
-    {
-        "name": "Colombe",
-        "image": "🕊",
-        "category": "objet"
-    },
-    {
-        "name": "Angélique",
-        "image": "😇",
-        "category": "visage"
-    },
-    {
-        "name": "Soleil",
-        "image": "☀️",
-        "category": "objet"
-    },
-    {
-        "name": "Sablier",
-        "image": "⏳️",
-        "category": "objet"
-    },
-    {
-        "name": "Chien",
-        "image": "🐕",
-        "category": "objet"
-    },
-    {
-        "name": "Musique",
-        "image": "🎶",
-        "category": "objet"
-    },
-    {
-        "name": "Arc",
-        "image": "🏹",
-        "category": "objet"
-    },
-    {
-        "name": "Brouillard",
-        "image": "🌫",
-        "category": "objet"
-    },
-    {
-        "name": "Pomme",
-        "image": "🍎",
-        "category": "nourriture"
-    },
-    {
-        "name": "Silence",
-        "image": "🤫",
-        "category": "visage"
-    },
-    {
-        "name": "Pleurs",
-        "image": "😭",
-        "category": "visage"
-    },
-    {
-        "name": "Force",
-        "image": "💪",
-        "category": "objet"
-    },
-    {
-        "name": "Gêne",
-        "image": "🤭",
-        "category": "visage"
-    },
-    {
-        "name": "Silhouette brumeuse",
-        "image": "😶‍🌫️",
-        "category": "visage"
-    },
-    {
-        "name": "Éternuement",
-        "image": "🤧",
-        "category": "visage"
-    },
-    {
-        "name": "Peinture",
-        "image": "🎨",
-        "category": "objet"
-    },
-    {
-        "name": "Tableau",
-        "image": "🖼",
-        "category": "objet"
-    },
-    {
-        "name": "Feuillage",
-        "image": "🌿",
-        "category": "objet"
-    },
-    {
-        "name": "Ange",
-        "image": "👼",
-        "category": "visage"
-    },
-    {
-        "name": "Pied",
-        "image": "🦶",
-        "category": "objet"
-    },
-    {
-        "name": "Cœur anatomique",
-        "image": "🫀",
-        "category": "objet"
-    },
-    {
-        "name": "Froid",
-        "image": "🥶",
-        "category": "visage"
-    },
-    {
-        "name": "Étourdissant",
-        "image": "🥴",
-        "category": "visage"
-    },
-    {
-        "name": "Fièvre",
-        "image": "🤒",
-        "category": "visage"
-    },
-    {
-        "name": "Urne",
-        "image": "⚱️",
-        "category": "objet"
-    },
-    {
-        "name": "Fleur de cerisier",
-        "image": "🌸",
-        "category": "objet"
-    },
-    {
-        "name": "Yeux",
-        "image": "👀",
-        "category": "objet"
-    },
-    {
-        "name": "Cerveau",
-        "image": "🧠",
-        "category": "objet"
-    },
-    {
-        "name": "Ruban",
-        "image": "🎀",
-        "category": "objet"
-    },
-    {
-        "name": "Horloge",
-        "image": "🕰",
-        "category": "objet"
-    },
-    {
-        "name": "Trompette",
-        "image": "🎺",
-        "category": "objet"
-    },
-    {
-        "name": "Saxophone",
-        "image": "🎷",
-        "category": "objet"
-    },
-    {
-        "name": "Guitare",
-        "image": "🎸",
-        "category": "objet"
-    },
-    {
-        "name": "Tambour",
-        "image": "🥁",
-        "category": "objet"
-    },
-    {
-        "name": "Puzzle",
-        "image": "🧩",
-        "category": "objet"
-    },
-    {
-        "name": "Trophée",
-        "image": "🏆",
-        "category": "objet"
-    },
-    {
-        "name": "Blessé",
-        "image": "🤕",
-        "category": "visage"
-    },
-    {
-        "name": "Supplication",
-        "image": "🥺",
-        "category": "visage"
-    },
-    {
-        "name": "Effrayé",
-        "image": "😱",
-        "category": "visage"
-    },
-    {
-        "name": "Horrifié",
-        "image": "😨",
-        "category": "visage"
-    },
-    {
-        "name": "Rage",
-        "image": "😤",
-        "category": "visage"
-    },
-    {
-        "name": "Écriture",
-        "image": "✍",
-        "category": "objet"
-    },
-    {
-        "name": "Lama",
-        "image": "🦙",
-        "category": "objet"
-    },
-    {
-        "name": "Lapin",
-        "image": "🐰",
-        "category": "objet"
-    },
-    {
-        "name": "Aigle",
-        "image": "🦅",
-        "category": "objet"
-    },
-    {
-        "name": "Vague",
-        "image": "🌊",
-        "category": "objet"
-    },
-    {
-        "name": "Journal",
-        "image": "🗞",
-        "category": "objet"
-    },
-    {
-        "name": "Chaînes",
-        "image": "⛓",
-        "category": "objet"
-    },
-    {
-        "name": "Feuille",
-        "image": "🍃",
-        "category": "objet"
-    },
-    {
-        "name": "Tournesol",
-        "image": "🌻",
-        "category": "objet"
-    },
-    {
-        "name": "Soupe",
-        "image": "🍜",
-        "category": "nourriture"
-    },
-    {
-        "name": "Vin",
-        "image": "🍷",
-        "category": "nourriture"
-    },
-    {
-        "name": "Partition",
-        "image": "🎼",
-        "category": "objet"
-    },
-    {
-        "name": "Trou",
-        "image": "🕳",
-        "category": "objet"
-    },
-    {
-        "name": "Bague",
-        "image": "💍",
-        "category": "objet"
-    },
-    {
-        "name": "Gouttes",
-        "image": "💦",
-        "category": "objet"
-    },
-    {
-        "name": "Papillon",
-        "image": "🦋",
-        "category": "objet"
-    },
-    {
-        "name": "Bougie",
-        "image": "🕯",
-        "category": "objet"
-    },
-    {
-        "name": "Enveloppe",
-        "image": "✉",
-        "category": "objet"
-    },
-    {
-        "name": "Balai",
-        "image": "🧹",
-        "category": "objet"
-    }
+  {
+    "name": "Visage souriant",
+    "image": "😀",
+    "category": "visage"
+  },
+  {
+    "name": "Visage contrarié",
+    "image": "😖",
+    "category": "visage"
+  },
+  {
+    "name": "En colère",
+    "image": "😠",
+    "category": "visage"
+  },
+  {
+    "name": "Suppliant",
+    "image": "🥺",
+    "category": "visage"
+  },
+  {
+    "name": "Sourire calme",
+    "image": "🙂",
+    "category": "visage"
+  },
+  {
+    "name": "Sans expression",
+    "image": "😶",
+    "category": "visage"
+  },
+  {
+    "name": "Larmes de joie",
+    "image": "🥲",
+    "category": "visage"
+  },
+  {
+    "name": "Fatigué",
+    "image": "😫",
+    "category": "visage"
+  },
+  {
+    "name": "Pleurant",
+    "image": "😭",
+    "category": "visage"
+  },
+  {
+    "name": "Rire aux larmes",
+    "image": "😂",
+    "category": "visage"
+  },
+  {
+    "name": "Rire gêné",
+    "image": "😅",
+    "category": "visage"
+  },
+  {
+    "name": "Blessé",
+    "image": "🤕",
+    "category": "visage"
+  },
+  {
+    "name": "Effrayé",
+    "image": "😱",
+    "category": "visage"
+  },
+  {
+    "name": "Déçu",
+    "image": "😞",
+    "category": "visage"
+  },
+  {
+    "name": "Rêveur",
+    "image": "😌",
+    "category": "visage"
+  },
+  {
+    "name": "Terrifié",
+    "image": "😨",
+    "category": "visage"
+  },
+  {
+    "name": "Pensif",
+    "image": "🤔",
+    "category": "visage"
+  },
+  {
+    "name": "Curieux",
+    "image": "🧐",
+    "category": "visage"
+  },
+  {
+    "name": "Sourire malicieux",
+    "image": "🤪",
+    "category": "visage"
+  },
+  {
+    "name": "Abasourdi",
+    "image": "😵",
+    "category": "visage"
+  },
+  {
+    "name": "Ange",
+    "image": "😇",
+    "category": "visage"
+  },
+  {
+    "name": "Amoureux",
+    "image": "😍",
+    "category": "visage"
+  },
+  {
+    "name": "Explosion mentale",
+    "image": "🤯",
+    "category": "visage"
+  },
+  {
+    "name": "Fête joyeuse",
+    "image": "🥳",
+    "category": "visage"
+  },
+  {
+    "name": "Soupçonneux",
+    "image": "🤨",
+    "category": "visage"
+  },
+  {
+    "name": "Indifférent",
+    "image": "🫤",
+    "category": "visage"
+  },
+  {
+    "name": "Triste",
+    "image": "🙁",
+    "category": "visage"
+  },
+  {
+    "name": "Gêné caché",
+    "image": "🫣",
+    "category": "visage"
+  },
+  {
+    "name": "Prince",
+    "image": "🤴🏼",
+    "category": "personne"
+  },
+  {
+    "name": "Bébé",
+    "image": "👶",
+    "category": "personne"
+  },
+  {
+    "name": "Femme rousse",
+    "image": "👩‍🦰",
+    "category": "personne"
+  },
+  {
+    "name": "Pensif",
+    "image": "😒",
+    "category": "visage"
+  },
+  {
+    "name": "Homme",
+    "image": "👨",
+    "category": "personne"
+  },
+  {
+    "name": "Adulte",
+    "image": "🧑‍",
+    "category": "personne"
+  },
+  {
+    "name": "Vieil homme",
+    "image": "👴🏻",
+    "category": "personne"
+  },
+  {
+    "name": "Reine",
+    "image": "🫅",
+    "category": "personne"
+  },
+  {
+    "name": "Femme enceinte",
+    "image": "🤱",
+    "category": "personne"
+  },
+  {
+    "name": "Sirène",
+    "image": "🧜‍♂️",
+    "category": "personne"
+  },
+  {
+    "name": "Femme qui parle",
+    "image": "💁‍️",
+    "category": "personne"
+  },
+  {
+    "name": "Vieille dame",
+    "image": "👵",
+    "category": "personne"
+  },
+  {
+    "name": "Ange",
+    "image": "👼",
+    "category": "personne"
+  },
+  {
+    "name": "Prière",
+    "image": "🙏",
+    "category": "geste"
+  },
+  {
+    "name": "S’agenouiller",
+    "image": "🧎🏻",
+    "category": "geste"
+  },
+  {
+    "name": "Personne debout (femme)",
+    "image": "🧍‍♀",
+    "category": "geste"
+  },
+  {
+    "name": "Personne debout (homme)",
+    "image": "🧍‍♂️",
+    "category": "geste"
+  },
+  {
+    "name": "Doigt levé",
+    "image": "☝️",
+    "category": "geste"
+  },
+  {
+    "name": "Doigts vers la droite",
+    "image": "👉",
+    "category": "geste"
+  },
+  {
+    "name": "Main levée",
+    "image": "✋️",
+    "category": "geste"
+  },
+  {
+    "name": "Bras musclé",
+    "image": "💪",
+    "category": "corps"
+  },
+  {
+    "name": "Pied",
+    "image": "🦶",
+    "category": "corps"
+  },
+  {
+    "name": "Yeux",
+    "image": "👀",
+    "category": "corps"
+  },
+  {
+    "name": "Goutte de sang",
+    "image": "🩸",
+    "category": "corps"
+  },
+  {
+    "name": "Étoile",
+    "image": "🌟",
+    "category": "nature"
+  },
+  {
+    "name": "Soleil",
+    "image": "☀️",
+    "category": "nature"
+  },
+  {
+    "name": "Larme",
+    "image": "💧",
+    "category": "nature"
+  },
+  {
+    "name": "Flamme",
+    "image": "🔥",
+    "category": "nature"
+  },
+  {
+    "name": "Crâne",
+    "image": "💀",
+    "category": "nature"
+  },
+  {
+    "name": "Colère",
+    "image": "💢",
+    "category": "émotion"
+  },
+  {
+    "name": "Casque militaire",
+    "image": "🪖",
+    "category": "objet"
+  },
+  {
+    "name": "Couteau",
+    "image": "🔪",
+    "category": "objet"
+  },
+  {
+    "name": "Dague",
+    "image": "🗡️",
+    "category": "objet"
+  },
+  {
+    "name": "Trident",
+    "image": "🔱",
+    "category": "objet"
+  },
+  {
+    "name": "Épées croisées",
+    "image": "⚔️",
+    "category": "objet"
+  },
+  {
+    "name": "Bouclier",
+    "image": "🛡️",
+    "category": "objet"
+  },
+  {
+    "name": "Plume",
+    "image": "🪶",
+    "category": "nature"
+  },
+  {
+    "name": "Aile",
+    "image": "🪽",
+    "category": "nature"
+  },
+  {
+    "name": "Lit",
+    "image": "🛌",
+    "category": "objet"
+  },
+  {
+    "name": "Baignoire",
+    "image": "🛁",
+    "category": "objet"
+  },
+  {
+    "name": "Souffle",
+    "image": "🌬",
+    "category": "nature"
+  },
+  {
+    "name": "Vase",
+    "image": "🏺",
+    "category": "objet"
+  },
+  {
+    "name": "Éponge",
+    "image": "🧽",
+    "category": "objet"
+  },
+  {
+    "name": "Biberon",
+    "image": "🍼",
+    "category": "objet"
+  },
+  {
+    "name": "Robe",
+    "image": "👗",
+    "category": "vêtement"
+  },
+  {
+    "name": "Couronne",
+    "image": "👑",
+    "category": "objet"
+  },
+  {
+    "name": "Roche",
+    "image": "🪨",
+    "category": "nature"
+  },
+  {
+    "name": "Arbre",
+    "image": "🌳",
+    "category": "nature"
+  },
+  {
+    "name": "Palmier",
+    "image": "🌴",
+    "category": "nature"
+  },
+  {
+    "name": "Sapin",
+    "image": "🌲",
+    "category": "nature"
+  },
+  {
+    "name": "Fleurs",
+    "image": "💐",
+    "category": "nature"
+  },
+  {
+    "name": "Feuille",
+    "image": "🌿",
+    "category": "nature"
+  },
+  {
+    "name": "Fleur rose",
+    "image": "🌸",
+    "category": "nature"
+  },
+  {
+    "name": "Pomme",
+    "image": "🍎",
+    "category": "nourriture"
+  },
+  {
+    "name": "Orange",
+    "image": "🍊",
+    "category": "nourriture"
+  },
+  {
+    "name": "Raisin",
+    "image": "🍇",
+    "category": "nourriture"
+  },
+  {
+    "name": "Patate",
+    "image": "🥔",
+    "category": "nourriture"
+  },
+  {
+    "name": "Nuage",
+    "image": "☁️",
+    "category": "nature"
+  },
+  {
+    "name": "Verre de vin",
+    "image": "🍷",
+    "category": "nourriture"
+  },
+  {
+    "name": "Couverts",
+    "image": "🍽️",
+    "category": "nourriture"
+  },
+  {
+    "name": "Pain",
+    "image": "🥖",
+    "category": "nourriture"
+  },
+  {
+    "name": "Champagne",
+    "image": "🍾",
+    "category": "nourriture"
+  },
+  {
+    "name": "Brochette",
+    "image": "🍢",
+    "category": "nourriture"
+  },
+  {
+    "name": "Poulet grillé",
+    "image": "🍖",
+    "category": "nourriture"
+  },
+  {
+    "name": "Viande",
+    "image": "🥩",
+    "category": "nourriture"
+  },
+  {
+    "name": "Aigle",
+    "image": "🦅",
+    "category": "animal"
+  },
+  {
+    "name": "Poussin",
+    "image": "🐤",
+    "category": "animal"
+  },
+  {
+    "name": "Dinde",
+    "image": "🦃",
+    "category": "animal"
+  },
+  {
+    "name": "Colombe",
+    "image": "🕊️",
+    "category": "animal"
+  },
+  {
+    "name": "Lapin",
+    "image": "🐇",
+    "category": "animal"
+  },
+  {
+    "name": "Chien",
+    "image": "🐶",
+    "category": "animal"
+  },
+  {
+    "name": "Cheval",
+    "image": "🐴",
+    "category": "animal"
+  },
+  {
+    "name": "Serpent",
+    "image": "🐍",
+    "category": "animal"
+  },
+  {
+    "name": "Cochon",
+    "image": "🐷",
+    "category": "animal"
+  },
+  {
+    "name": "Château",
+    "image": "🏰",
+    "category": "lieu"
+  },
+  {
+    "name": "Montagnes",
+    "image": "🏔",
+    "category": "lieu"
+  },
+  {
+    "name": "Volcan",
+    "image": "🌋",
+    "category": "lieu"
+  },
+  {
+    "name": "Village",
+    "image": "🏡",
+    "category": "lieu"
+  },
+  {
+    "name": "Croix chrétienne",
+    "image": "✝️",
+    "category": "symbole"
+  },
+  {
+    "name": "Rouge",
+    "image": "🔴",
+    "category": "couleur"
+  },
+  {
+    "name": "Orange",
+    "image": "🟠",
+    "category": "couleur"
+  },
+  {
+    "name": "Jaune",
+    "image": "🟡",
+    "category": "couleur"
+  },
+  {
+    "name": "Vert",
+    "image": "🟢",
+    "category": "couleur"
+  },
+  {
+    "name": "Bleu",
+    "image": "🔵",
+    "category": "couleur"
+  },
+  {
+    "name": "Violet",
+    "image": "🟣",
+    "category": "couleur"
+  },
+  {
+    "name": "Noir",
+    "image": "⚫️",
+    "category": "couleur"
+  },
+  {
+    "name": "Blanc",
+    "image": "⚪️",
+    "category": "couleur"
+  },
+  {
+    "name": "Marron",
+    "image": "🟤",
+    "category": "couleur"
+  }
 ]
