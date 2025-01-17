@@ -5,12 +5,10 @@ export default class extends Controller {
 
 
   connect() {
-    // Check if local storage indicates a reset is needed
     if (localStorage.getItem('resetFlow')) {
-      localStorage.removeItem('resetFlow'); // Clear the flag
-      // DO NOT RELOAD HERE
-    } 
-    this.showSection(0); // Always show the first section
+      localStorage.removeItem('resetFlow');
+    }
+    this.showSection(0);
   }
 
   next() {
@@ -32,11 +30,11 @@ export default class extends Controller {
     .then(response => response.json())
     .then(data => {
       if (data.status === 'success') {
-        this.next(); // Go to the "Thanks" screen (if not the last contribution)
+        this.next();
       } else if (data.status === 'finished') {
-          window.location.href = "/home/finish"; // Redirect directly to finish
+          window.location.href = "/home/finish";
       } else {
-        // Handle errors
+
         alert("An error occurred during submission.");
         console.error("Server returned an error:", data);
       }
@@ -48,8 +46,8 @@ export default class extends Controller {
   }
 
   reset() {
-    localStorage.setItem('resetFlow', 'true'); // Set a flag in local storage
-    window.location.href = "/questions/contribute"; // Redirect to the contribute page
+    localStorage.setItem('resetFlow', 'true');
+    window.location.href = "/questions/contribute";
   }
   showSection(index) {
     this.sectionTargets.forEach((section, i) => {

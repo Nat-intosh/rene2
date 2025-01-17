@@ -1,30 +1,30 @@
 class QuestionsController < ApplicationController
   before_action :set_question, only: %i[ show edit update destroy ], except: [:finish]
 
-  # GET /questions or /questions.json
+
   def index
     @questions = Question.all
   end
 
-  # GET /questions/1 or /questions/1.json
+
   def show
   end
 
-  # GET /questions/new
+
   def new
     @question = Question.new
   end
 
-  # GET /questions/1/edit
+
   def edit
   end
 
   def new_question
       @question = Question.order('RANDOM()').first
-      # Ajoute la peinture de la question et 3 autres aléatoires
+
       @paintings = Painting.where.not(id: @question.painting_id).order('RANDOM()').limit(3).to_a
       @paintings << @question.painting
-      @paintings.shuffle! # Mélange les peintures pour que la bonne réponse ne soit pas toujours au même endroit
+      @paintings.shuffle!
   end
 
   def submit_answer
@@ -53,7 +53,7 @@ class QuestionsController < ApplicationController
       puts "miam"
       redirect_to home_finish_path
       return
-    end 
+    end
 
     @painting = Painting.order('RANDOM()').first
     @emojis = Emoji.all
@@ -82,17 +82,16 @@ class QuestionsController < ApplicationController
       contributions_count = 0
       puts "coucoucocucoucoucou"
       render json: { status: 'finished' }
-    else 
-      render json: { status: 'success' } # Return a JSON success response
+    else
+      render json: { status: 'success' }
     end
   end
 
   def reset_contributions
-    session[:contributions_count] = 0 # Reset the counter
-    render json: { status: 'success' } # Send a success response
+    session[:contributions_count] = 0
+    render json: { status: 'success' }
   end
 
-  # POST /questions or /questions.json
   def create
     @question = Question.new(question_params)
 
@@ -107,7 +106,6 @@ class QuestionsController < ApplicationController
     end
   end
 
-  # PATCH/PUT /questions/1 or /questions/1.json
   def update
     respond_to do |format|
       if @question.update(question_params)
@@ -123,7 +121,7 @@ class QuestionsController < ApplicationController
   def finish
     contributions_count = 0
   end
-  # DELETE /questions/1 or /questions/1.json
+
   def destroy
     @question.destroy!
 
@@ -134,12 +132,12 @@ class QuestionsController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
+
     def set_question
       @question = Question.find(params.expect(:id))
     end
 
-    # Only allow a list of trusted parameters through.
+
     def question_params
       params.expect(question: [ :painting_id, :emoji1_id, :emoji2_id, :emoji3_id ])
     end

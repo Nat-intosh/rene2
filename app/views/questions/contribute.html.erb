@@ -45,6 +45,16 @@
 <%
 =end%>
 
+<script>
+  jQuery(document).ready(function(){
+    $('#bouton-location').prop('disabled', true);
+
+    setTimeout(function() {
+      $('#bouton-location').prop('disabled', false).removeClass("disable");
+    }, 2000);
+  });
+</script>
+
 <div data-controller="step">
   <section id="welcome" class="container page" data-step="0" data-target="step.section">
     <div class="contribute-location-top">
@@ -61,7 +71,7 @@
       </div>
       <p>Trouve-le dans la salle du musée.</p>
     </div>
-    <button class="bouton-container" data-action="click->step#next">J'y suis</button>
+    <button id="bouton-location" class="bouton-container disable" data-action="click->step#next">J'y suis</button>
   </section>
 
   <section id="contribution" class="container page" data-controller="emoji" data-step="1" data-target="step.section" hidden>

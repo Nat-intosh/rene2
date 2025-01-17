@@ -1,30 +1,20 @@
 class PaintingsController < ApplicationController
   before_action :set_painting, only: %i[ show edit update destroy ]
 
-  # GET /paintings or /paintings.json
   def index
     @paintings = Painting.all
   end
 
-  # GET /paintings/1 or /paintings/1.json
   def show
   end
 
-  # GET /paintings/new
   def new
     @painting = Painting.new
-  #  @emojis = Emoji.all
   end
-  
-  # def new
-  #   @painting = Painting.new
-  # end
 
-  # GET /paintings/1/edit
   def edit
   end
 
-  # POST /paintings or /paintings.json
   def create
     @painting = Painting.new(painting_params)
 
@@ -39,7 +29,6 @@ class PaintingsController < ApplicationController
     end
   end
 
-  # PATCH/PUT /paintings/1 or /paintings/1.json
   def update
     respond_to do |format|
       if @painting.update(painting_params)
@@ -52,7 +41,6 @@ class PaintingsController < ApplicationController
     end
   end
 
-  # DELETE /paintings/1 or /paintings/1.json
   def destroy
     @painting.destroy!
 
@@ -63,12 +51,11 @@ class PaintingsController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
+
     def set_painting
       @painting = Painting.find(params.expect(:id))
     end
 
-    # Only allow a list of trusted parameters through.
     def painting_params
       params.expect(painting: [ :name, :author, :image, :date, :rebus ])
     end

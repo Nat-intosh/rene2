@@ -17,56 +17,52 @@
   </div>
 
   <div data-controller="questions">
-    <%= form_with url: submit_answer_questions_path, method: :post, local: true,
-                  data: { question_form_target: "questionForm" } do |f| %>
+  <%= form_with url: submit_answer_questions_path, method: :post, local: true, data: { question_form_target: "questionForm" } do |f| %>
     <%= hidden_field_tag :id, @question.id %>
 
-  <div style="display:flex; justify-content:center;">
-    <div class="paintings-grids mt-4" id="gallery">
-      <% @paintings.each do |painting| %>
-      <div class="painting-card text-center m-2">
-        <%= label_tag "painting_#{painting.id}", class: "painting-label" do %>
-        <a href="<%= painting.image %>" data-fancybox="gallery" data-caption="<%= painting.name %> - <%= painting.author %>">
-          <div class="painting-card">
-            <%= image_tag painting.image, class: 'painting-image' %>
-            <div class="painting-image-background"></div>
-            <%= image_tag "zoom.svg", class: 'painting-logo' %>
+    <div style="display:flex; justify-content:center;">
+      <div class="paintings-grids mt-4" id="gallery">
+        <% @paintings.each do |painting| %>
+          <div class="painting-card text-center m-2">
+            <%= label_tag "painting_#{painting.id}", class: "painting-label" do %>
+              <a href="<%= painting.image %>" data-fancybox="gallery" data-caption="<%= painting.name %> - <%= painting.author %>">
+                <div class="painting-card">
+                  <%= image_tag painting.image, class: 'painting-image painting-card-image' %>
+                  <div class="painting-image-background"></div>
+                  <%= image_tag "zoom.svg", class: 'painting-logo' %>
+                </div>
+              </a>
+              <%= f.radio_button :selected_painting, painting.id, id: "painting_#{painting.id}", class: 'painting-radio', data: { action: "change->questions#toggleSubmit", questions_target: "radio" } %>
+            <% end %>
           </div>
-        </a>
-        <%= f.radio_button :selected_painting, painting.id, id: "painting_#{painting.id}", class: 'painting-radio' %>
         <% end %>
       </div>
-      <% end %>
     </div>
-  </div>
 
-  <div class="question-buttons-section">
-
+    <div class="question-buttons-section">
       <button type="button" class="bouton-indice" data-bs-toggle="modal" data-bs-target="#exampleModal">
-      Aidez-moi
-    </button>
+        Aidez-moi
+      </button>
 
-    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-      <div class="modal-dialog modal-dialog-centered">
-        <div class="modal-content">
-          <div class="modal-header">
-            <p class="modal-title fs-5" id="exampleModalLabel">Voici un indice pour t’aider !</p>
-            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-          </div>
-          <div class="modal-body">
-            <p class="mb-2">Si ton tableau était un même ce serais :</p>
-            <%= image_tag @question.painting.rebus, class: 'emoji emoji-rebus' %>
+      <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+          <div class="modal-content">
+            <div class="modal-header">
+              <p class="modal-title fs-5" id="exampleModalLabel">Voici un indice pour t’aider !</p>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <p class="mb-2">Si ton tableau était un même, ce serait :</p>
+              <%= image_tag @question.painting.rebus, class: 'emoji emoji-rebus' %>
+            </div>
           </div>
         </div>
       </div>
-    </div>
-
 
       <div class="submit-button-container">
-        <%= f.submit 'Valider', class: 'bouton-container', data: { action: "click->questions#submitQuestion" } %>
+        <%= f.submit 'Valider', class: 'bouton-container disable', data: { action: "click->questions#submitQuestion", questions_target: "submitButton" }, disabled: true %>
       </div>
-      <% end %>
     </div>
-
-  </div>
+  <% end %>
+</div>
 </section>

@@ -11,7 +11,7 @@ export default class extends Controller {
   }
 
   resetContributions(event) {
-    event.preventDefault(); // Prevent default link behavior
+    event.preventDefault();
 
     fetch('/questions/reset_contributions', {
       method: 'POST',
