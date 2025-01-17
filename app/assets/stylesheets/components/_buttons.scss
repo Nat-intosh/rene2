@@ -31,3 +31,15 @@
   display: flex;
   justify-content: center;
 }
+
+.button-suppresion {
+  width: 46px;
+  height: 100%;
+  background: $black;
+  color: white;
+  border-radius: 2px;
+  border: none;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+}

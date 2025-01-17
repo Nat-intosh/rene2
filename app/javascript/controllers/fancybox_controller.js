@@ -17,6 +17,4 @@ export default class extends Controller {
     } else {
       console.error("FancyBox n'est pas chargé correctement");
     }
-  }
-
 }

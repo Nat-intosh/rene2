@@ -8,6 +8,7 @@
   border: 1px solid $black;
   border-radius: 2px;
   font-size: 35px;
+  padding: 4px;
 }
 
 .emoji-selection-container {
@@ -31,7 +32,7 @@
   max-height: 300px;
   border: solid 1px $black;
   margin-bottom: 32px;
-  justify-content: center;
+  justify-content: space-between;
 }
 
 .contribute-location-text {
@@ -61,4 +62,11 @@
   flex-direction: column;
   gap: 10px;
   margin-bottom: 32px;
+}
+
+.emoji-selection-interface-emojis {
+  display: flex;
+  width: 400px;
+  gap: 15%;
+  margin-left: 10%;
 }

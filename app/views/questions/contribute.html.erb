@@ -71,7 +71,11 @@
     </div>
     <div class="emoji-selection-container mt-4">
       <p class="fw-bold mb-2">Voici ta saisie :</p>
-      <div id="selected-emojis" class="emoji-selection-interface" data-emoji-target="selectedEmojis"></div>
+      <div class="emoji-selection-interface">
+        <div class="emoji-selection-interface-emojis" id="selected-emojis"  data-emoji-target="selectedEmojis">
+        </div>
+        <button class="button-suppresion" type="button" data-action="emoji#resetEmojis"><%= image_tag "close.svg" %></button>
+      </div>
     </div>
       <p class="fw-bold mb-2">Sélectionne trois emoji dans la liste suivante :</p>
       <div id="emoji-selection" class="emoji-grid">
@@ -82,8 +86,9 @@
       <% end %>
     </div>
 
-    <button type="button" data-action="emoji#resetEmojis">Réinitialiser la sélection</button> <div id="selected-emojis" class="emoji-selection-interface" data-emoji-target="selectedEmojis">
-    
+
+
+
     <%= form_with url: submit_contribution_questions_path, method: :post, local: true, data: { action: "submit->step#submitForm" } do |f| %>
     <%= hidden_field_tag :painting_id, @painting.id %>
     <%= hidden_field_tag :emoji1_id, nil, id: 'emoji1_id', data: { emoji_target: 'emoji1Id' } %>
@@ -91,16 +96,17 @@
     <%= hidden_field_tag :emoji3_id, nil, id: 'emoji3_id', data: { emoji_target: 'emoji3Id' } %>
 
 
-    <div class="bouton-container">
-      <%= f.submit 'Valider', class: 'btn-submit', disabled: true, id: 'submit-button', data: { emoji_target: 'submitButton' } %>
-    </div>
+
+      <%= f.submit 'Valider', class: 'btn-submit bouton-container', disabled: true, id: 'submit-button', data: { emoji_target: 'submitButton' } %>
+
 
     <% end %>
   </section>
 
-  <section id="thanks" class="container" data-step="2" data-target="step.section" hidden>
-    <h1>Merci pour ta contribution</h1>
-    <p>Ta contribution a bien été envoyée</p>
-    <button data-action="click->step#reset">Contribuer à nouveau</button>
+  <section id="thanks" class="container page" data-step="2" data-target="step.section" hidden>
+    <h2>Merci pour ta contribution ! 🙏 </h2>
+    <p class="mt-4">Y’a pas à dire, tu es un as des emojis ! On continue ? Encore un tableau et on te laisse repartir.</p>
+    <p class="big-emoji">🥳</p>
+    <button class="bouton-container" data-action="click->step#reset">Continuer</button>
   </section>
 </div>

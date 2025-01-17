@@ -11,7 +11,7 @@
 =begin%>
  <%= image_tag @question.emoji1.image, class: 'emoji emoji-results' %>
     <%= image_tag @question.emoji2.image, class: 'emoji emoji-results' %>
-    <%= image_tag @question.emoji3.image, class: 'emoji emoji-results' %> 
+    <%= image_tag @question.emoji3.image, class: 'emoji emoji-results' %>
 <%
 =end%>
   </div>
@@ -21,17 +21,23 @@
                   data: { question_form_target: "questionForm" } do |f| %>
     <%= hidden_field_tag :id, @question.id %>
 
-  <div class="paintings-grids mt-4" id="gallery">
-    <% @paintings.each do |painting| %>
-    <div class="painting-card text-center m-2">
-      <%= label_tag "painting_#{painting.id}", class: "painting-label" do %>
-      <a href="<%= painting.image %>" data-fancybox="gallery" data-caption="<%= painting.name %> - <%= painting.author %>">
-        <%= image_tag painting.image, class: 'painting-image' %>
-      </a>
-      <%= f.radio_button :selected_painting, painting.id, id: "painting_#{painting.id}", class: 'painting-radio' %>
+  <div style="display:flex; justify-content:center;">
+    <div class="paintings-grids mt-4" id="gallery">
+      <% @paintings.each do |painting| %>
+      <div class="painting-card text-center m-2">
+        <%= label_tag "painting_#{painting.id}", class: "painting-label" do %>
+        <a href="<%= painting.image %>" data-fancybox="gallery" data-caption="<%= painting.name %> - <%= painting.author %>">
+          <div class="painting-card">
+            <%= image_tag painting.image, class: 'painting-image' %>
+            <div class="painting-image-background"></div>
+            <%= image_tag "zoom.svg", class: 'painting-logo' %>
+          </div>
+        </a>
+        <%= f.radio_button :selected_painting, painting.id, id: "painting_#{painting.id}", class: 'painting-radio' %>
+        <% end %>
+      </div>
       <% end %>
     </div>
-    <% end %>
   </div>
 
   <div class="question-buttons-section">
@@ -48,11 +54,8 @@
             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
           </div>
           <div class="modal-body">
-
+            <p class="mb-2">Si ton tableau était un même ce serais :</p>
             <%= image_tag @question.painting.rebus, class: 'emoji emoji-rebus' %>
-
-
-
           </div>
         </div>
       </div>
