@@ -55,7 +55,7 @@ export default class extends Controller {
   // }
 
   addEmoji(event) {
-    // Récupérer l'ID de l'émoji depuis l'attribut `data-emoji-id` du parent .emoji-card
+    // Récupérer l'élément .emoji-card cliqué
     const emojiCard = event.target.closest(".emoji-card");
     if (!emojiCard) {
       console.error("Élément .emoji-card non trouvé. Vérifiez la structure HTML.");
@@ -63,7 +63,7 @@ export default class extends Controller {
     }
 
     const emojiId = emojiCard.dataset.emojiId;
-    const emojiText = emojiCard.textContent.trim(); // Récupérer le texte de l'émoji
+    const emojiText = emojiCard.textContent.trim();
 
     if (!emojiId) {
       console.error("ID de l'émoji introuvable. Vérifiez le HTML.");
@@ -84,15 +84,17 @@ export default class extends Controller {
 
     this.selected.push(emojiId);
 
+    // Ajouter une classe pour griser l'émoji
+    emojiCard.classList.add("disabled");
+
     // Créer un élément span pour afficher l'émoji sélectionné
     const selectedEmoji = document.createElement("span");
     selectedEmoji.textContent = emojiText;
-    selectedEmoji.classList.add("selected-emoji"); // Ajoute une classe pour le style
+    selectedEmoji.classList.add("selected-emoji");
     selectedEmoji.dataset.emojiId = emojiId;
 
-
-    //Ajouter la possibilité de supprimer un émoji
-      selectedEmoji.addEventListener("click", () => this.removeEmoji(emojiId, selectedEmoji));
+    // Ajouter la possibilité de supprimer un émoji
+    selectedEmoji.addEventListener("click", () => this.removeEmoji(emojiId, selectedEmoji, emojiCard));
 
     this.selectedEmojisTarget.appendChild(selectedEmoji);
 
@@ -111,7 +113,28 @@ export default class extends Controller {
     this.emoji2IdTarget.value = null;
     this.emoji3IdTarget.value = null;
 
+    const emojiCards = document.querySelectorAll(".emoji-card.disabled");
+    emojiCards.forEach(card => {
+      card.classList.remove("disabled");
+    });
+
     // Update the submit button state
+    this.updateSubmitButtonState();
+  }
+
+  removeEmoji(emojiId, selectedEmoji, emojiCard) {
+    // Retirer l'emoji de la liste sélectionnée
+    this.selected = this.selected.filter(id => id !== emojiId);
+
+    // Supprimer l'affichage de l'émoji sélectionné
+    selectedEmoji.remove();
+
+    // Supprimer la classe disabled pour rendre l'émoji sélectionnable à nouveau
+    if (emojiCard) {
+      emojiCard.classList.remove("disabled");
+    }
+
+    this.updateHiddenFields();
     this.updateSubmitButtonState();
   }
 
