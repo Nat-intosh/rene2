@@ -55,6 +55,11 @@
     "category": "visage"
   },
   {
+    "name": "Cowboy",
+    "image": "🤠",
+    "category": "visage"
+  },
+  {
     "name": "Blessé",
     "image": "🤕",
     "category": "visage"
@@ -420,6 +425,11 @@
     "category": "nourriture"
   },
   {
+    "name": "Cerise",
+    "image": "🍒",
+    "category": "nourriture"
+  },
+  {
     "name": "Patate",
     "image": "🥔",
     "category": "nourriture"
@@ -480,6 +490,16 @@
     "category": "animal"
   },
   {
+    "name": "Poule",
+    "image": "🐔",
+    "category": "animal"
+  },
+  {
+    "name": "Poulet",
+    "image": "🐓",
+    "category": "animal"
+  },
+  {
     "name": "Colombe",
     "image": "🕊️",
     "category": "animal"
@@ -507,6 +527,11 @@
   {
     "name": "Cochon",
     "image": "🐷",
+    "category": "animal"
+  },
+  {
+    "name": "Renard",
+    "image": "🦊",
     "category": "animal"
   },
   {

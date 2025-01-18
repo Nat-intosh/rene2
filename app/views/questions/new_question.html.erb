@@ -1,7 +1,8 @@
 <section class="container page">
   <div class="new-questions-text-section">
     <h2>Devine le tableau !</h2>
-    <p>Voici une liste d'emojis, devine quel tableau est décrit :</p>
+    <p>Pas besoin de se déplacer dans la salle : clique sur les tableaux, swipe et choisis celui qui correspond le plus !</p>
+    <p>Voici une liste d'emojis qu'un autre visiteur à donné, devine quel tableau est décrit :</p>
   </div>
   <div class="emoji-combination d-flex justify-content-center">
     <%= @question.emoji1.image %>
@@ -40,15 +41,15 @@
     </div>
 
     <div class="question-buttons-section">
-      <button type="button" class="bouton-indice" data-bs-toggle="modal" data-bs-target="#exampleModal">
+      <button type="button" class="bouton-indice" data-bs-toggle="modal" data-bs-target="#Indice_modal">
         Aidez-moi
       </button>
 
-      <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal fade" id="Indice_modal" tabindex="-1" aria-labelledby="Indice_modal_label" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered">
           <div class="modal-content">
             <div class="modal-header">
-              <p class="modal-title fs-5" id="exampleModalLabel">Voici un indice pour t’aider !</p>
+              <p class="modal-title fs-5" id="Indice_modal_label">Voici un indice pour t’aider !</p>
               <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">

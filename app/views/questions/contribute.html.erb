@@ -51,7 +51,7 @@
 
     setTimeout(function() {
       $('#bouton-location').prop('disabled', false).removeClass("disable");
-    }, 2000);
+    }, 5000);
   });
 </script>
 
@@ -67,9 +67,9 @@
     </div>
     <div class="contribute-text-image">
       <div class="painting-location">
+        <p class="mb-2">Trouve-le dans la salle du musée.</p>
         <%= image_tag @painting.image %>
       </div>
-      <p>Trouve-le dans la salle du musée.</p>
     </div>
     <button id="bouton-location" class="bouton-container disable" data-action="click->step#next">J'y suis</button>
   </section>
@@ -77,7 +77,26 @@
   <section id="contribution" class="container page" data-controller="emoji" data-step="1" data-target="step.section" hidden>
     <div class="result-top">
       <h2>Décris le tableau &#x1F3A8</h2>
+      <p>Tu vas devoir décrire ce tableau pour les autres joueurs : fais pas n'importe quoi, car quelqu'un dans la salle devra ensuite deviner ce que t'as essayé de communiquer... </p>
       <p>Choisis 3 emojis pour décrire ce tableau.</p>
+            <button type="button" class="bouton-tableau" data-bs-toggle="modal" data-bs-target="#tableau_modal">
+        Revoir le tableau <%= image_tag "eye.svg" %>
+      </button>
+
+      <div class="modal fade" id="tableau_modal" tabindex="-1" aria-labelledby="tableau_modal_label" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+          <div class="modal-content">
+            <div class="modal-header">
+              <p class="modal-title fs-5" id="tableau_modal_label">Déplace toi devant ce tableau :</p>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <p class="mb-2"><%= @painting.name %></p>
+              <%= image_tag @painting.image , class: 'emoji emoji-rebus' %>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
     <div class="emoji-selection-container mt-4">
       <p class="fw-bold mb-2">Voici ta saisie :</p>

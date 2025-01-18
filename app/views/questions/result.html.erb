@@ -12,7 +12,7 @@
   </div>
     <div class="result-false-image">
       <%= image_tag @question.painting.image, class: 'img-fluid' %>
-      <p>C'était  <span class="fw-medium fst-italic"><%= @question.painting.name %></span> de <%= @question.painting.author %> fait en <%= @question.painting.date %>.</p>
+      <p>C'était  <span class="fw-medium fst-italic"><%= @question.painting.name %></span> de <%= @question.painting.author %> (<%= @question.painting.date %>).</p>
     </div>
   <% end %>
   <%= link_to "Continuer", new_question_questions_path, class: "button-continue bouton-container" %>

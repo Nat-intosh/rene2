@@ -27,6 +27,19 @@
   margin-right: auto;
 }
 
+.bouton-tableau {
+  background-color: $black;
+  color: white;
+  font-family: "IBM Plex Sans";
+  font-size: 16px;
+  border: none;
+  padding: 8px 18px;
+  display: flex;
+  margin-right: auto;
+  align-items: center;
+  gap: 12px;
+}
+
 .credits-bouton-container {
   display: flex;
   justify-content: center;
@@ -42,4 +55,9 @@
   justify-content: center;
   align-items: center;
   display: flex;
+}
+
+.disable {
+  background-color: #949292 !important;
+  cursor: not-allowed;
 }

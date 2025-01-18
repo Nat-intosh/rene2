@@ -1,30 +1,36 @@
 class QuestionsController < ApplicationController
-  before_action :set_question, only: %i[ show edit update destroy ], except: [:finish]
-
+  before_action :set_question, only: %i[show edit update destroy], except: [:finish]
 
   def index
     @questions = Question.all
   end
 
-
   def show
   end
-
 
   def new
     @question = Question.new
   end
 
-
   def edit
   end
 
   def new_question
-      @question = Question.order('RANDOM()').first
+    asked_questions = session[:asked_questions] || []
 
-      @paintings = Painting.where.not(id: @question.painting_id).order('RANDOM()').limit(3).to_a
-      @paintings << @question.painting
-      @paintings.shuffle!
+    @question = Question.where.not(id: asked_questions).order('RANDOM()').first
+
+    if @question.nil?
+      session[:asked_questions] = []
+      @question = Question.order('RANDOM()').first
+    end
+
+    session[:asked_questions] ||= []
+    session[:asked_questions] << @question.id
+
+    @paintings = Painting.where.not(id: @question.painting_id).order('RANDOM()').limit(3).to_a
+    @paintings << @question.painting
+    @paintings.shuffle!
   end
 
   def submit_answer
@@ -42,7 +48,6 @@ class QuestionsController < ApplicationController
     end
 
     render :result
-
   end
 
   def contribute
@@ -50,7 +55,6 @@ class QuestionsController < ApplicationController
 
     if contributions_count >= 3
       session[:contributions_count] = 0
-      puts "miam"
       redirect_to home_finish_path
       return
     end
@@ -69,18 +73,15 @@ class QuestionsController < ApplicationController
     session[:contributions_count] = (session[:contributions_count] || 0) + 1
     contributions_count = session[:contributions_count].to_i
 
-    if contributions_count == 1
       Question.create(
         painting: painting,
         emoji1: emoji1,
         emoji2: emoji2,
         emoji3: emoji3
       )
-    end
 
-    if contributions_count >= 3
+    if contributions_count >= 1
       contributions_count = 0
-      puts "coucoucocucoucoucou"
       render json: { status: 'finished' }
     else
       render json: { status: 'success' }
@@ -119,7 +120,8 @@ class QuestionsController < ApplicationController
   end
 
   def finish
-    contributions_count = 0
+    session[:asked_questions] = []
+    session[:correct_answers] = 0
   end
 
   def destroy
@@ -133,13 +135,11 @@ class QuestionsController < ApplicationController
 
   private
 
-    def set_question
-      @question = Question.find(params.expect(:id))
-    end
+  def set_question
+    @question = Question.find(params[:id])
+  end
 
-
-    def question_params
-      params.expect(question: [ :painting_id, :emoji1_id, :emoji2_id, :emoji3_id ])
-    end
-
+  def question_params
+    params.require(:question).permit(:painting_id, :emoji1_id, :emoji2_id, :emoji3_id)
+  end
 end
