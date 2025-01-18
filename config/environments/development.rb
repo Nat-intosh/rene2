@@ -54,13 +54,7 @@ Rails.application.configure do
 
   # Highlight code that enqueued background job in logs.
   config.active_job.verbose_enqueue_logs = true
-  config.force_ssl = true
-  config.action_dispatch.x_forwarded_proto = %w[https]
-  config.action_dispatch.trusted_proxies = [
-  # Adresse IP du conteneur Nginx Proxy Manager
-  '172.18.0.0/16' # Remplacez par le réseau Docker exact si nécessaire
-]
-  config.hosts << "musemoji.natvand.eu.org"
+
   # Raises error for missing translations.
   # config.i18n.raise_on_missing_translations = true
 

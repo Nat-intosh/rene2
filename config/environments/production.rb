@@ -78,7 +78,13 @@ Rails.application.configure do
 
   # Only use :id for inspections in production.
   config.active_record.attributes_for_inspect = [ :id ]
-
+  config.force_ssl = true
+  config.action_dispatch.x_forwarded_proto = %w[https]
+  config.action_dispatch.trusted_proxies = [
+  # Adresse IP du conteneur Nginx Proxy Manager
+  '172.18.0.0/16' # Remplacez par le réseau Docker exact si nécessaire
+]
+  config.hosts << "musemoji.natvand.eu.org"
   # Enable DNS rebinding protection and other `Host` header attacks.
   # config.hosts = [
   #   "example.com",     # Allow requests from example.com

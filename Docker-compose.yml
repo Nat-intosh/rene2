@@ -19,7 +19,7 @@ services:
     ports:
       - "1234:3000"
     environment:
-      RAILS_ENV: development
+      RAILS_ENV: production
       DATABASE_URL: postgres://postgres:BibbleIsTheBest@db:5432/myapp_development
     depends_on:
       - db
