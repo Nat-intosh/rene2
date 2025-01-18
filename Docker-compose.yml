@@ -1,0 +1,25 @@
+version: '3.9'
+services:
+  db:
+    image: postgres:15
+    volumes:
+      - ./tmp/db:/var/lib/postgresql/data
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: BibbleIsTheBest
+      POSTGRES_DB: myapp_development
+    ports:
+      - "5432:5432"
+
+  web:
+    build: .
+    command: bash -c "rm -f tmp/pids/server.pid && ./bin/wait-for-it db:5432 -- bundle exec rails s -p 3000 -b '0.0.0.0'"
+    volumes:
+      - .:/rails
+    ports:
+      - "1234:3000"
+    environment:
+      RAILS_ENV: development
+      DATABASE_URL: postgres://postgres:BibbleIsTheBest@db:5432/myapp_development
+    depends_on:
+      - db
